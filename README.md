@@ -75,3 +75,21 @@ newman run filename
 
 ## Additional
 [See more git and go command](https://github.com/ImKK-000/git-and-go-step)
+
+## Ebook Thai
+https://www.dropbox.com/sh/is3hwdqa1dpsb99/AACb9QvxPEUo1Z-tD0Nz2KNZa?dl=0
+
+## GO Video Thai
+[Basic]
+https://www.youtube.com/playlist?list=PLEE74DyIkwEm4BHNx0_0gPb-TlHFH4ZSc
+
+[Web]
+https://www.youtube.com/playlist?list=PLEE74DyIkwEmCIvkQ7xpS9dZ7aSEO39hf
+
+[Authenticate]
+https://www.youtube.com/watch?v=XseIOD9SnfE&t=1s
+https://www.youtube.com/watch?v=S_hSblZrcak
+https://www.youtube.com/watch?v=XdF99kbWQ5Q
+
+[GO+Bootstrap]
+https://www.youtube.com/watch?v=tfNa0_i8BjM&t=535s
