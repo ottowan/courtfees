@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "2909781f-94f9-482c-8f15-8c76ffd8083e",
+		"name": "UpMember",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "63b62721-ac58-4be5-b642-79ec6384c67e",
+			"name": "userid_006_uprank_from_gold_to_platinum",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bf219609-80f2-41bd-ac4c-96bb62693156",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Firtname should be ANUSIT IMNAIBOON\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.eql(\"ANUSIT IMNAIBOON\");",
+							"});",
+							"",
+							"pm.test(\"UserID should be 006\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userid).to.eql(\"006\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Level should be Platinum\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.level).to.eql(\"Platinum\");",
+							"});",
+							"",
+							"pm.test(\"Point should be 800\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.point).to.eql(800);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userID",
+							"value": "006",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/uptoplatinum/userID/006",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"uptoplatinum",
+						"userID",
+						"006"
+					]
+				},
+				"description": "http://localhost:3000/api/v1/memberlevel"
+			},
+			"response": []
+		}
+	]
+}
