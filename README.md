@@ -93,3 +93,7 @@ https://www.youtube.com/watch?v=XdF99kbWQ5Q
 
 [GO+Bootstrap]
 https://www.youtube.com/watch?v=tfNa0_i8BjM&t=535s
+
+[Call API]
+https://stackoverflow.com/questions/43624404/golang-how-to-parse-unmarshal-decode-a-json-array-api-response
+
