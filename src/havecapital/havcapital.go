@@ -1,4 +1,5 @@
 package havecapital
+
 import (
 	"bytes"
 	"encoding/json"
@@ -16,13 +17,12 @@ const url = "http://localhost:3000/writrate"
 const feeCapitalConst = 50000000.00
 const feeTypeConst = "มีทุนทรัพย์"
 const failFeePriceConst = 0.00
+const feePriceConst = 200000.00
 
 func CalculateCapitalEqual50Milion(feeType string, feeCapital float64) float64 {
 
-	const feePrice = 200000.00
-
 	if feeType == feeTypeConst && feeCapital == feeCapitalConst {
-		return feePrice
+		return feePriceConst
 	}
 
 	return failFeePriceConst
@@ -31,23 +31,18 @@ func CalculateCapitalEqual50Milion(feeType string, feeCapital float64) float64 {
 
 func CalculateCapitalLess50Milion(feeType string, feeCapital float64) float64 {
 
-	const feePrice = 200000.00
-
 	if feeType == feeTypeConst && feeCapital < feeCapitalConst {
-		return (feeCapital * 2) / 100
+		return CheckFeePriceOver200k((feeCapital * 2) / 100)
 	}
 
 	return failFeePriceConst
 
 }
 
-
 func CalculateCapitalOver50Milion(feeType string, feeCapital float64) float64 {
 
-	const feePrice = 200000.00
-
 	if feeType == feeTypeConst && feeCapital > feeCapitalConst {
-		return feePrice + (((feeCapital - feeCapitalConst) * 0.1) / 100)
+		return feePriceConst + (((feeCapital - feeCapitalConst) * 0.1) / 100)
 	}
 
 	return failFeePriceConst
@@ -83,7 +78,6 @@ func CalculateWritRate(moo int, subDistrict string, district string, province st
 
 func CheckFeePriceOver200k(feePrice float64) float64 {
 
-	const feePriceConst = 200000.00
 	if feePrice > feePriceConst {
 		return feePriceConst
 	}

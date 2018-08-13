@@ -15,8 +15,8 @@ func Test_CalculateCapitalEqual50Milion_Input_HaveCapital_50Milion_Shoud_Be_200k
 
 }
 
-func Test_CalculateCapitalLess50Milion_Input_HaveCapital_45680000_Shoud_Be_913600(t *testing.T) {
-	expectedFeePrice := 913600.00
+func Test_CalculateCapitalLess50Milion_Input_HaveCapital_45680000_Shoud_Be_200k(t *testing.T) {
+	expectedFeePrice := 200000.00
 	feeType := "มีทุนทรัพย์"
 	feeCapital := 45680000.00
 
@@ -28,6 +28,16 @@ func Test_CalculateCapitalLess50Milion_Input_HaveCapital_45680000_Shoud_Be_91360
 
 }
 
+func Test_CheckFeePriceOver200k_Input_913600_Should_Be_200k(t *testing.T) {
+	expectedFeePrice := 200000.00
+	feePrice := 913600.00
+
+	actualFeePrice := CheckFeePriceOver200k(feePrice)
+
+	if expectedFeePrice != actualFeePrice {
+		t.Errorf("Expected %v but got it %v", expectedFeePrice, actualFeePrice)
+	}
+}
 func Test_CalculateCapitalOver50Milion_Input_HaveCapital_650Milion200k_Shoud_Be_800200(t *testing.T) {
 	expectedFeePrice := 800200.00
 	feeType := "มีทุนทรัพย์"
@@ -55,13 +65,3 @@ func Test_CalculateWritRate_Input_5_maelaos_chiangkham_phayao_Should_Be_500(t *t
 	}
 }
 
-func Test_CheckFeePriceOver200k_Input_913600_Should_Be_200k(t *testing.T) {
-	expectedFeePrice := 200000.00
-	feePrice := 913600.00
-
-	actualFeePrice := CheckFeePriceOver200k(feePrice)
-
-	if expectedFeePrice != actualFeePrice {
-		t.Errorf("Expected %v but got it %v", expectedFeePrice, actualFeePrice)
-	}
-}
