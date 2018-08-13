@@ -80,3 +80,14 @@ func CalculateWritRate(moo int, subDistrict string, district string, province st
 
 	return datas.WritRate
 }
+
+func CheckFeePriceOver200k(feePrice float64) float64 {
+
+	const feePriceConst = 200000.00
+	if feePrice > feePriceConst {
+		return feePriceConst
+	}
+
+	return feePrice
+
+}

@@ -54,3 +54,14 @@ func Test_CalculateWritRate_Input_5_maelaos_chiangkham_phayao_Should_Be_500(t *t
 		t.Errorf("Expected %v but got it %v", expectedWritRate, actualWritRate)
 	}
 }
+
+func Test_CheckFeePriceOver200k_Input_913600_Should_Be_200k(t *testing.T) {
+	expectedFeePrice := 200000.00
+	feePrice := 913600.00
+
+	actualFeePrice := CheckFeePriceOver200k(feePrice)
+
+	if expectedFeePrice != actualFeePrice {
+		t.Errorf("Expected %v but got it %v", expectedFeePrice, actualFeePrice)
+	}
+}
