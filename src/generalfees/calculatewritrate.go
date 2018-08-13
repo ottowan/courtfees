@@ -9,14 +9,14 @@ import (
 	"strconv"
 )
 
-
 type Data struct {
-    WritRate float64 `json:"writrate"`
+	WritRate float64 `json:"writrate"`
 }
+
+const url = "http://localhost:3000/writrate"
 
 func CalculateWritRate(moo int, subDistrict string, district string, province string) float64 {
 
-	url := "http://localhost:3000/writrate"
 	values := map[string]string{"moo": strconv.Itoa(moo), "subDistrict": subDistrict, "district": district, "province": province}
 	jsonValue, _ := json.Marshal(values)
 
