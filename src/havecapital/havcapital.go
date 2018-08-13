@@ -82,6 +82,6 @@ func CheckFeePriceOver200k(feePrice float64) float64 {
 		return feePriceConst
 	}
 
-	return feePrice
+	return failFeePriceConst
 
 }
