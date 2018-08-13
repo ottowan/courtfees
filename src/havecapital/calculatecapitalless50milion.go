@@ -1,4 +1,4 @@
-package generalfees
+package havecapital
 
 func CalculateCapitalLess50Milion(feeType string, feeCapital float64) float64 {
 

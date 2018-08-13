@@ -1,4 +1,4 @@
-package generalfees
+package havecapital
 
 const feeCapitalConst = 50000000.00
 const feeTypeConst = "มีทุนทรัพย์"

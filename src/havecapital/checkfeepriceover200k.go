@@ -1,4 +1,4 @@
-package generalfees
+package havecapital
 
 func CheckFeePriceOver200k(feePrice float64) float64 {
 
