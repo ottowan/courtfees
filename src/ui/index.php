@@ -33,18 +33,18 @@
 <div id="wrapper">
 	
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-		<!-- <div class="top-area">
+		<div class="top-area">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-6 col-md-6">
+					<!-- <div class="col-sm-6 col-md-6">
 					<p class="bold text-left">สำนักงานศาลยุติธรรม</p>
 					</div>
 					<div class="col-sm-6 col-md-6">
 					<p class="bold text-right"></p>
-					</div>
+					</div> -->
 				</div>
 			</div>
-		</div> -->
+		</div>
         <div class="container navigation">
 		
             <div class="navbar-header page-scroll">
@@ -393,10 +393,28 @@
 												<div class="panel-heading">
 													<h3 class="panel-title"><span class="fa fa-pencil-square-o"></span> ข้อมูลโจทก์ <small></small></h3>
 												</div>
-												<div class="col-xs-10 col-sm-10 col-md-10">
+												<div class="col-sm-1">
 												<div class="form-group">
-													<label>ชื่อโจทก์</label>
-													<input type="text" name="plaintiffName[]" id="plaintiffName" class="form-control input-md">
+													<label>ลำดับ</label><br/>
+													<input type="button" name="plaintiffNo" id="plaintiffNo" class="form-control input-md" value="1" disabled/>
+												</div>
+												</div>
+												<div class="col-sm-2">
+												<div class="form-group">
+													<label>คำนำหน้า</label>
+													<input type="text" name="plaintiffNameTitle[]" id="plaintiffNameTitle" class="form-control input-md">
+												</div>
+												</div>
+												<div class="col-sm-4">
+												<div class="form-group">
+													<label>ชื่อ</label>
+													<input type="text" name="plaintiffFirstName[]" id="plaintiffFirstName" class="form-control input-md">
+												</div>
+												</div>
+												<div class="col-sm-4 col">
+												<div class="form-group">
+													<label>นามสกุล</label>
+													<input type="text" name="plaintiffLastName[]" id="plaintiffLastName" class="form-control input-md">
 												</div>
 												</div>
 												
@@ -406,11 +424,12 @@
 										<div class="plaintiff-add" align="left">
                         						<button type="button" name="add" id="add" class="btn btn-primary repeater-add-btn">+เพิ่มโจทก์</button>
 											</div>
+											<br/>
 										<div class="row">
 											<div class="col-xs-12 col-sm-12 col-md-12">
 												<div class="form-group">
 													<label>ประเภททุนทรัพย์</label>
-													<input type="text" name="last_name" id="last_name" class="form-control input-md">
+													<input type="text" name="capitalType" id="capitalType" class="form-control input-md">
 												</div>
 											</div>
 										</div>
@@ -419,7 +438,7 @@
 												<div class="col-xs-12 col-sm-12 col-md-12">
 												<div class="form-group">
 													<label>มูลค่าทุนทรัพย์</label>
-													<input type="email" name="email" id="email" class="form-control input-md">
+													<input type="email" name="value" id="value" class="form-control input-md">
 												</div>
 											</div>
 											</div>
@@ -427,62 +446,85 @@
 											<div class="col-xs-12 col-sm-12 col-md-12">
 												<div class="form-group">
 													<label>ประเภทคดี</label>
-													<input type="text" name="phone" id="phone" class="form-control input-md">
+													<input type="text" name="caseType" id="caseType" class="form-control input-md">
 												</div>
 											</div>
 										</div>
 										<hr>
+										<div id="accused">
 										<div class="row">
 											<div class="panel-heading">
 												<h3 class="panel-title"><span class="fa fa-pencil-square-o" ></span> ข้อมูลจำเลย <small></small></h3>
 												</div>
-												<div class="col-xs-12 col-sm-12 col-md-12">
+												<div class="col-sm-1">
+												<div class="form-group">
+													<label>ลำดับ</label><br/>
+													<input type="button" name="accusedNo" id="accusedNo" class="form-control input-md" value="1" disabled/>
+												</div>
+												</div>
+												<div class="col-sm-2">
+												<div class="form-group">
+													<label>คำนำหน้า</label>
+													<input type="text" name="accusedNameTitle[]" id="accusedNameTitle" class="form-control input-md">
+												</div>
+												</div>
+												<div class="col-sm-4">
 													<div class="form-group">
 														<label>ชื่อจำเลย</label>
-														<input type="text" name="phone" id="phone" class="form-control input-md">
+														<input type="text" name="accusedFirstName[]" id="accusedFirstName" class="form-control input-md">
 													</div>
 												</div>
-											</div>
+											
+											<div class="col-sm-4">
+												<div class="form-group">
+													<label>นามสกุล</label>
+													<input type="text" name="accusedLastName[]" id="accusedLastName" class="form-control input-md">
+												</div>
+												</div></div>
 											<div class="row">
-													<div class="col-xs-12 col-sm-12 col-md-12">
+													<div class="col-sm-12">
 														<div class="form-group">
 															<label>ที่อยู่จำเลย</label>
-															<input type="text" name="phone" id="phone" class="form-control input-md">
+															<input type="text" name="address[]" id="address" class="form-control input-md">
 														</div>
 													</div>
 												</div>
 												<div class="row">
-														<div class="col-xs-6 col-sm-6 col-md-6">
+														<div class="col-sm-6">
 															<div class="form-group">
 																<label>จังหวัด</label>
-																<input type="text" name="phone" id="phone" class="form-control input-md">
+																<input type="text" name="province[]" id="province" class="form-control input-md">
 															</div>
 														</div>
-														<div class="col-xs-6 col-sm-6 col-md-6">
+														<div class="col-sm-6">
 															<div class="form-group">
 																<label>อำเภอ</label>
-																<input type="text" name="phone" id="phone" class="form-control input-md">
+																<input type="text" name="district[]" id="district" class="form-control input-md">
 															</div>
 														</div>
 												</div>
 												<div class="row">
-														<div class="col-xs-6 col-sm-6 col-md-6">
+														<div class="col-sm-6">
 															<div class="form-group">
 																<label>ตำบล</label>
-																<input type="text" name="phone" id="phone" class="form-control input-md">
+																<input type="text" name="subDistrict[]" id="subDistrict" class="form-control input-md">
 															</div>
 														</div>
-														<div class="col-xs-6 col-sm-6 col-md-6">
+														<div class="col-sm-6">
 															<div class="form-group">
 																<label>รหัสไปรษณีย์</label>
-																<input type="text" name="phone" id="phone" class="form-control input-md">
+																<input type="text" name="zipcode[]" id="zipcode" class="form-control input-md">
 															</div>
 														</div>
-												</div>
+										</div>
+										</div>
 										
-										<input type="submit" value="คำนวณ" class="btn btn-skin btn-block btn-lg">
+										<div class="accused-add" align="left">
+                        						<button type="button" name="add2" id="add2" class="btn btn-primary repeater-add-btn">+เพิ่มจำเลย</button>
+											</div><br/>
+											<input type="submit" value="คำนวณ" class="btn btn-skin btn-block btn-lg">
 										
-										<p class="lead-footer">* เป็นการคำนวณโดยประมาณ ค่าใช้จ่ายจริงจะถูกคิดที่ศาลเท่านั้น</p>
+										<p class="lead-footer">* โปรแกรมคำนวณนี้เป็นข้อมูลค่าธรรมเนียมโดยประมาณเท่านั้น ไม่สามารถนำมาใช้เป็นหลักฐานอ้างอิงได้</p>
 									
 									</form>
 								</div>
@@ -582,14 +624,14 @@
 	
 		
 	<!-- Section: works -->
-    <!-- <section id="facilities" class="home-section paddingbot-60">
+    <section id="results" class="home-section paddingbot-60">
 		<div class="container marginbot-50">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2">
 					<div class="wow fadeInDown" data-wow-delay="0.1s">
 					<div class="section-heading text-center">
-					<h2 class="h-bold">Our facilities</h2>
-					<p>Ea melius ceteros oportere quo, pri habeo viderer facilisi ei</p>
+					<h3 class="h-bold">ผลการคำนวณค่าธรรมเนียมศาลและค่าป่วยการ</h3>
+					<!-- <p>รายละเอียดค่าใช้จ่ายโดยประมาณ</p> -->
 					</div>
 					</div>
 					<div class="divider-short"></div>
@@ -598,22 +640,96 @@
 		</div>
 
 <div class="container">
+		<div class="col-lg-8 col-lg-offset-2 blue">
+			<div class="bg-faded">
+			<div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.2s">
+			<div class="container">
 			<div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12" >
-					<div class="wow bounceInUp" data-wow-delay="0.2s">
-                    <div id="owl-works" class="owl-carousel">
-                        <div class="item"><a href="img/photo/1.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg"><img src="img/photo/1.jpg" class="img-responsive" alt="img"></a></div>
-                        <div class="item"><a href="img/photo/2.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/2@2x.jpg"><img src="img/photo/2.jpg" class="img-responsive " alt="img"></a></div>
-                        <div class="item"><a href="img/photo/3.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/3@2x.jpg"><img src="img/photo/3.jpg" class="img-responsive " alt="img"></a></div>
-                        <div class="item"><a href="img/photo/4.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/4@2x.jpg"><img src="img/photo/4.jpg" class="img-responsive " alt="img"></a></div>
-                        <div class="item"><a href="img/photo/5.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/5@2x.jpg"><img src="img/photo/5.jpg" class="img-responsive " alt="img"></a></div>
-                        <div class="item"><a href="img/photo/6.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/6@2x.jpg"><img src="img/photo/6.jpg" class="img-responsive " alt="img"></a></div>
-                    </div>
+			<br/>
+					<h4>ข้อมูลทั่วไป</h4>
+			</div></div>	
+				<div class="row">
+					<div class="col-lg-3 col-lg-offset-1">
+					<p><b>ชื่อ-นามสกุล(โจทก์)</b></p>
 					</div>
-                </div>
+					<div class="col-lg-6">
+						1.นายทดสอบ ระบบ
+						2.นายทดสอบ ระบบ
+					</div>
+					</div>
+					<div class="row">
+					<div class="col-lg-3 col-lg-offset-1">
+						<p><b>ชื่อ-นามสกุล(จำเลย)</b></p>
+					</div>
+					<div class="col-lg-6">
+						1.นายคดี พิเศษ
+						2.นายคดี พิเศษ
+						3.นายคดี พิเศษ
+						1.นายคดี พิเศษ
+						2.นายคดี พิเศษ
+						3.นายคดี พิเศษ
+					</div>
+            		</div>
+					<div class="row">
+					<div class="col-lg-3 col-lg-offset-1">
+					<p><b>ประเภททุนทรัพย์</b><p>
+					</div>
+					<div class="col-lg-6">
+						มีทุนทรัพย์
+					</div>
+            		</div>
+					<div class="row">
+					<div class="col-lg-3 col-lg-offset-1">
+					<p><b>ประเภทคดี</b><p>
+					</div>
+					<div class="col-lg-6">
+						อนุญาโตตุลาการ
+					</div>
+            		</div>
+
+
+					
+  <div class="container">
+	<div class="row">
+  <h4>ค่าธรรมเนียม</h4>
+  <p>โปรแกรมคำนวณนี้เป็นข้อมูลค่าธรรมเนียมโดยประมาณเท่านั้น ไม่สามารถนำมาใช้เป็นหลักฐานอ้างอิงได้</p>
+  </div>
+  <div class="row">
+  <div class="col-lg-7">           
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+</div>
+			</div>
             </div>
+			</div>
 		</div>
-	</section> -->
+	</section>
 	<!-- /Section: works -->
 	
 	
@@ -980,12 +1096,12 @@
       var i2=1;  
       $('#add').click(function(){  
            i++;  
-           $('#plaintiff').append('<div id="row'+i+'" class="form-group row"><div class="col-xs-10 col-sm-10 col-md-10"><div class="form-group"><input type="text" name="plaintiffName[]" id="plaintiffName" class="form-control input-md"></div></div><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></div>  ');  
+           $('#plaintiff').append('<div id="row'+i+'" class="form-group row"><div class="col-sm-1"><div class="form-group"><label>ลำดับ</label><input type="button" name="plaintiffNo" id="plaintiffNo" class="form-control input-md" value="'+i+'" disabled/></div></div><div class="col-sm-2"><div class="form-group"><label>คำนำหน้า</label><input type="text" name="plaintiffNameTitle[]" id="plaintiffNameTitle" class="form-control input-md"></div></div><div class="col-sm-4"><div class="form-group"><label>ชื่อ</label><input type="text" name="plaintiffFirstName[]" id="plaintiffFirstName" class="form-control input-md"></div></div><div class="col-sm-4"><div class="form-group"><label>นามสกุล</label><input type="text" name="plaintiffLastName[]" id="plaintiffLastName" class="form-control input-md"></div></div><div class="col-sm-1"><br/><input type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove" value="ลบ"></div></div>  ');  
       });  
 
       $('#add2').click(function(){  
            i2++;  
-           $('#addInfo').append('<div class="form-group row"> <div class="col-sm-1">ลำดับ<input type="text" name="order" class="form-control" id="" value='+i2+' disabled></div><div class="col-sm-2">วันเดือนปี<input type="text" name="serviceDate[]" class="form-control" id=""></div><div class="col-sm-3">ชื่อผู้ขอข้อมูลข่าวสาร<input type="text" name="serviceName[]" class="form-control" id=""></div><div class="col-sm-3">ที่อยู่หรือสถานที่ติดต่อได้<input type="text" name="serviceAddress[]" class="form-control" id=""></div><div class="col-sm-3">หมายเหตุ<input type="text" name="serviceComment[]" class="form-control" id=""></div></div>  ');  
+           $('#accused').append('<div id="row'+i2+'" class="form-group row"><div class="col-sm-1"><div class="form-group"><label>ลำดับ</label><input type="button" name="accusedNo" id="accusedNo" class="form-control input-md" value="'+i2+'" disabled/></div></div><div class="col-sm-2"><div class="form-group"><label>คำนำหน้า</label><input type="text" name="accusedNameTitle[]" id="accusedNameTitle" class="form-control input-md"></div></div><div class="col-sm-4"><div class="form-group"><label>ชื่อจำเลย</label><input type="text" name="accusedFirstName[]" id="accusedFirstName" class="form-control input-md"></div></div><div class="col-sm-4"><div class="form-group"><label>นามสกุล</label><input type="text" name="accusedLastName[]" id="accusedLastName" class="form-control input-md"></div></div><div class="col-sm-12"><div class="form-group"><label>ที่อยู่จำเลย</label><input type="text" name="address[]" id="address" class="form-control input-md"></div></div><div class="col-sm-6"><div class="form-group"><label>จังหวัด</label><input type="text" name="province[]" id="province" class="form-control input-md"></div></div><div class="col-sm-6"><div class="form-group"><label>อำเภอ</label><input type="text" name="district[]" id="district" class="form-control input-md"></div></div><div class="col-sm-6"><div class="form-group"><label>ตำบล</label><input type="text" name="subDistrict[]" id="subDistrict" class="form-control input-md"></div></div><div class="col-sm-6"><div class="form-group"><label>รหัสไปรษณีย์</label><input type="text" name="zipcode[]" id="zipcode" class="form-control input-md"></div></div><div class="col-sm-1"><br/><input type="button" name="remove" id="'+i2+'" class="btn btn-danger btn_remove" value="ลบ"></div></div>  ');  
       });  
       $(document).on('click', '.btn_remove', function(){  
            var button_id = $(this).attr("id");   
