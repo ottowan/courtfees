@@ -19,3 +19,14 @@ func InitFeePrice0() int {
 func InitFeePrice200() int {
 	return 200
 }
+
+func CheckSectionType288_1(section string) bool {
+
+	sectionReturn := "288(1)"
+	if section == sectionReturn {
+		return true
+	}
+
+	return false
+
+}
