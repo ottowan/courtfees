@@ -10,3 +10,8 @@ func CheckFeeTypeNonCapital(feeType string) bool {
 
 	return false
 }
+
+func InitFeePrice0() int {
+
+	return 0
+}
