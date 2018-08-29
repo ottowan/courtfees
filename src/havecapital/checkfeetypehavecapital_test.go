@@ -2,7 +2,7 @@ package havecapital
 
 import "testing"
 
-func Test_CheckFeeTypeHaveCapital_Input_havecapital_Shoud_Be_true(t *testing.T) {
+func Test_CheckFeeTypeHaveCapital_Input_feeType_havecapital_Shoud_Be_true(t *testing.T) {
 	expectedFeeType := true
 	feeType := "มีทุนทรัพย์"
 

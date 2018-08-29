@@ -2,7 +2,7 @@ package havecapital
 
 import "testing"
 
-func Test_CheckHaveCapital300kto50m_Input_40000000_Should_Be_true(t *testing.T) {
+func Test_CheckHaveCapital300kto50m_Input_feeCapital40000000_Should_Be_true(t *testing.T) {
 	expectedResult := true
 	feeCapital := 40000000.00
 
