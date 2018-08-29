@@ -2,10 +2,8 @@ package havecapital
 
 import "testing"
 
-func Test_InitFreePrice200k(t *testing.T) {
+func Test_InitFreePrice200k_Should_Be_200000(t *testing.T) {
 	expectedFreePrice := 200000.00
-	//feePrice := 800000.00
-
 
 	actualFeePrice := InitFreePrice200k()
 
