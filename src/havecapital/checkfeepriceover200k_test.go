@@ -3,7 +3,7 @@ package havecapital
 import "testing"
 
 func Test_CheckFeePriceOver200k_Input_feePrice_1000000_Should_Be_20000(t *testing.T) {
-	expectedFeePrice := 200000.00
+	expectedFeePrice := true
 	feePrice := 1000000.00
 
 	actualFeePrice := CheckFeePriceOver200k(feePrice)

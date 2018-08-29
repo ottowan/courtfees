@@ -1,10 +1,10 @@
 package havecapital
 
-func CheckFeePriceOver200k(feePrice float64) float64 {
+func CheckFeePriceOver200k(feePrice float64) bool {
 	assignFeePrice := 200000.00
 	if feePrice >= assignFeePrice {
-		return assignFeePrice
+		return true
 	} else {
-		return feePrice
+		return false
 	}
 }
