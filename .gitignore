@@ -1,1 +1,4 @@
 pkg
+/client/cert
+/client/node_modules
+/src/cert
