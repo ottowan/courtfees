@@ -28,12 +28,12 @@ func Test_CalculateMortgageOver50m_Input_feeCapital_100000000_Should_Be_150000(t
 
 }
 
-func Test_CalculateMortgageTrifles_Input_feeCapital_500000_Should_Be_500(t *testing.T) {
+func Test_CalculateMortgageTrifles1To300k_Input_feeCapital_500000_Should_Be_500(t *testing.T) {
 
 	feeCapital := 500000.00
 	expectedFeePrice := 500.00
 
-	actualFeePrice := CalculateMortgageTrifles(feeCapital)
+	actualFeePrice := CalculateMortgageTrifles1To300k(feeCapital)
 
 	if expectedFeePrice != actualFeePrice {
 		t.Errorf("Expected %v but got %v", expectedFeePrice, actualFeePrice)
@@ -54,12 +54,12 @@ func Test_CheckFeeCapitalBetween1To300k_Input_feeCapital_50000_Should_Be_True(t 
 
 }
 
-func Test_checkFeeCapitalBetween300kto50m_Input_feeCapital_500000_Should_Be_True(t *testing.T) {
+func Test_CheckFeeCapitalBetween300kto50m_Input_feeCapital_500000_Should_Be_True(t *testing.T) {
 
 	feeCapital := 500000.00
 	expectedFeeCapital := true
 
-	actualFeeCapital := checkFeeCapitalBetween300k1to50m(feeCapital)
+	actualFeeCapital := CheckFeeCapitalBetween300k1to50m(feeCapital)
 
 	if expectedFeeCapital != actualFeeCapital {
 		t.Errorf("Expected %v but got %v", expectedFeeCapital, actualFeeCapital)
@@ -67,12 +67,12 @@ func Test_checkFeeCapitalBetween300kto50m_Input_feeCapital_500000_Should_Be_True
 
 }
 
-func Test_checkFeeCapitalOver50m_Input_feeCapital_100000000_Should_Be_True(t *testing.T) {
+func Test_CheckFeeCapitalOver50m_Input_feeCapital_100000000_Should_Be_True(t *testing.T) {
 
 	feeCapital := 100000000.00
 	expectedFeeCapital := true
 
-	actualFeeCapital := checkFeeCapitalOver50m(feeCapital)
+	actualFeeCapital := CheckFeeCapitalOver50m(feeCapital)
 
 	if expectedFeeCapital != actualFeeCapital {
 		t.Errorf("Expected %v but got %v", expectedFeeCapital, actualFeeCapital)
@@ -106,12 +106,12 @@ func Test_CheckFeePriceOver1000_Input_500_Should_Be_true(t *testing.T) {
 
 }
 
-func Test_checkFeeTypeMortgage_Input_feeType_mortgage_Slould_Be_True(t *testing.T) {
+func Test_CheckFeeTypeMortgage_Input_feeType_mortgage_Slould_Be_True(t *testing.T) {
 
 	feeType := "บังคับจำนอง"
 	expectedFeeType := true
 
-	actualFeeType := checkFeeTypeMortgage(feeType)
+	actualFeeType := CheckFeeTypeMortgage(feeType)
 
 	if expectedFeeType != actualFeeType {
 		t.Errorf("Expected %v but got %v", expectedFeeType, actualFeeType)

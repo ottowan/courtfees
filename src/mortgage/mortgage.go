@@ -1,5 +1,9 @@
 package mortgage
 
+func CalculateMortgageBetween1to300k(feeCapital float64) float64 {
+	return feeCapital * 0.01
+}
+
 func CalculateMortgageBetween300k1to50m(feeCapital float64) float64 {
 	return feeCapital * 0.01
 }
@@ -8,7 +12,7 @@ func CalculateMortgageOver50m(feeCapital float64) float64 {
 	return ((feeCapital - 50000000.00) * 0.001) + 100000.00
 }
 
-func CalculateMortgageTrifles(feeCapital float64) float64 {
+func CalculateMortgageTrifles1To300k(feeCapital float64) float64 {
 	return feeCapital * 0.001
 }
 
@@ -21,7 +25,7 @@ func CheckFeeCapitalBetween1To300k(feeCapital float64) bool {
 	return false
 }
 
-func checkFeeCapitalBetween300k1to50m(feeCapital float64) bool {
+func CheckFeeCapitalBetween300k1to50m(feeCapital float64) bool {
 
 	if feeCapital > 300000.00 && feeCapital <= 50000000.00 {
 		return true
@@ -30,7 +34,7 @@ func checkFeeCapitalBetween300k1to50m(feeCapital float64) bool {
 	}
 }
 
-func checkFeeCapitalOver50m(feeCapital float64) bool {
+func CheckFeeCapitalOver50m(feeCapital float64) bool {
 
 	checkFeeCapital := 50000000.00
 
@@ -55,7 +59,7 @@ func CheckFeePriceOver1000(feePrice float64) bool {
 	return false
 }
 
-func checkFeeTypeMortgage(feeType string) bool {
+func CheckFeeTypeMortgage(feeType string) bool {
 
 	feeTypeResult := "บังคับจำนอง"
 
