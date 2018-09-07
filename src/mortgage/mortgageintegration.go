@@ -10,6 +10,8 @@ func CalculateMortgage(feeCapital float64) float64 {
 			return InitFeePriceEqualFeePrice(feePrice)
 		}
 
+	} else if CheckFeeCapitalOver50m(feeCapital) {
+		return CalculateMortgageOver50m(feeCapital)
 	}
 
 	return 0.00
