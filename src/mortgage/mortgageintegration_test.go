@@ -51,3 +51,23 @@ func Test_CalculateMortgage_Input_feeCapital_50000_Sholud_Be_500(t *testing.T) {
 		t.Errorf("Expected %v but i got %v", expectedFeeCapital, actualFeeCapital)
 	}
 }
+
+func Test_CalculateMortgage_Input_feeCapital_300001_Sholud_Be_3000_01(t *testing.T) {
+	feeCapital := 300001.00
+	expectedFeeCapital := 3000.01
+	actualFeeCapital := CalculateMortgage(feeCapital)
+
+	if expectedFeeCapital != actualFeeCapital {
+		t.Errorf("Expected %v but i got %v", expectedFeeCapital, actualFeeCapital)
+	}
+}
+
+func Test_CalculateMortgage_Input_feeCapital_50000000_Sholud_Be_100000(t *testing.T) {
+	feeCapital := 50000000.00
+	expectedFeeCapital := 100000.00
+	actualFeeCapital := CalculateMortgage(feeCapital)
+
+	if expectedFeeCapital != actualFeeCapital {
+		t.Errorf("Expected %v but i got %v", expectedFeeCapital, actualFeeCapital)
+	}
+}
