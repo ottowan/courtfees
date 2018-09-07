@@ -139,7 +139,6 @@ func Test_InitFeePriceEqual1000_Should_Be_1000(t *testing.T) {
 	if expectedFeePrice != actualFeePrice {
 		t.Errorf("Expected %v but got %v", expectedFeePrice, actualFeePrice)
 	}
-
 }
 
 func Test_InitFeePriceEqualFeePrice_Input_500_Should_Be_500(t *testing.T) {
@@ -151,5 +150,4 @@ func Test_InitFeePriceEqualFeePrice_Input_500_Should_Be_500(t *testing.T) {
 	if expectedFeePrice != actualFeePrice {
 		t.Errorf("Expected %v but got %v", expectedFeePrice, actualFeePrice)
 	}
-
 }
