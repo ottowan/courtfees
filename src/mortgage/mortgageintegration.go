@@ -11,7 +11,17 @@ func CalculateMortgage(feeCapital float64) float64 {
 		}
 
 	} else if CheckFeeCapitalOver50m(feeCapital) {
+
 		return CalculateMortgageOver50m(feeCapital)
+
+	} else if CheckFeeCapitalBetween1To300k(feeCapital) {
+
+		feePrice := CalculateMortgageBetween1to300k(feeCapital)
+		if CheckFeePriceOver1000(feePrice) {
+			return InitFeePriceEqual1000()
+		} else {
+			return InitFeePriceEqualFeePrice(feePrice)
+		}
 	}
 
 	return 0.00
