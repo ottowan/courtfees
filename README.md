@@ -72,6 +72,13 @@ robot duration.robot
 ```
 newman run filename
 ```
+## DEV TOOL
+golang -> backend
+nodejs -> frontend
+git -> repository
+UI -> selenium
+postman+newman -> test api
+Jenkins -> CI/CD report
 
 ## Additional
 [See more git and go command](https://github.com/ImKK-000/git-and-go-step)
