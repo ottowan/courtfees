@@ -15,7 +15,7 @@ func Test_CheckFeeTypeNonCapital_Input_feeType_noncapital_Should_Be_True(t *test
 }
 
 func Test_InitFeePrice0_Input_Should_Be_0(t *testing.T) {
-	expectedFeePrice := 0
+	expectedFeePrice := 0.00
 
 	actualFeePrice := InitFeePrice0()
 
@@ -26,7 +26,7 @@ func Test_InitFeePrice0_Input_Should_Be_0(t *testing.T) {
 }
 
 func Test_InitFeePrice200_Input__Should_Be_200(t *testing.T) {
-	expectedFeePrice := 200
+	expectedFeePrice := 200.00
 
 	actualFeePrice := InitFeePrice200()
 
