@@ -1,0 +1,5 @@
+package havecapital
+
+func CalculateHaveCapital() {
+
+}
