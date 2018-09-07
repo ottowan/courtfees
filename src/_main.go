@@ -33,7 +33,6 @@ func main() {
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
-
 	//main project
 }
 func index(w http.ResponseWriter, r *http.Request) {
