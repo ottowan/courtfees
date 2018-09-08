@@ -65,11 +65,11 @@ func CheckFeePriceOver200k(feePrice float64) bool {
 	}
 }
 
-func CalculateTriflesHaveCapital(feeCapital float64) float64 {
+func CalculateHaveCapital1to300k(feeCapital float64) float64 {
 	return feeCapital * 0.02
 }
 
-func CalculateHaveCapitalRate(feeCapital float64) float64 {
+func CalculateHaveCapital300k1to50m(feeCapital float64) float64 {
 	return feeCapital * 0.02
 }
 

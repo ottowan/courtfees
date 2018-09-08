@@ -104,7 +104,7 @@ func Test_CalculateTriflesHaveCapital_Input_feeCapital_250000_Should_be_5000(t *
 	expectedFeePrice := 5000.00
 	feeCapital := 250000.00
 
-	actualFeePrice := CalculateTriflesHaveCapital(feeCapital)
+	actualFeePrice := CalculateHaveCapital1to300k(feeCapital)
 
 	if expectedFeePrice != actualFeePrice {
 		t.Errorf("Expected %v but i got %v", expectedFeePrice, actualFeePrice)
@@ -116,14 +116,14 @@ func Test_CalculateHaveCapitalRate_Input_feeCapital_40000000_Should_Be_80000(t *
 	expectedFeeprice := 800000.00
 	feeCapital := 40000000.00
 
-	actualFeeprice := CalculateHaveCapitalRate(feeCapital)
+	actualFeeprice := CalculateHaveCapital300k1to50m(feeCapital)
 
 	if expectedFeeprice != actualFeeprice {
 		t.Errorf("Expected %v but i got %v ", expectedFeeprice, actualFeeprice)
 	}
 }
 
-func Test_CaluculateHaveCapitalOver50m_Input_feeCapital_526845694_Should_Be_10536913dot88(t *testing.T){
+func Test_CaluculateHaveCapitalOver50m_Input_feeCapital_526845694_Should_Be_10536913dot88(t *testing.T) {
 
 	expectedFeePrice := 676845.694
 	feeCapital := 526845694.00
