@@ -12,6 +12,8 @@ func CalculateArbitration(person int, feeCapital float64) float64 {
 			return CalculateCommissionEqual30k()
 		} else if CheckCapitalBetween2m1to5m(feeCapital) {
 			return CalculateCommissionBetween2m1to5m(feeCapital)
+		} else if CheckCapitalBetween5m1to10m(feeCapital) {
+			return CalculateCommissionBetween5m1to10m(feeCapital)
 		}
 	}
 	return 0.00
