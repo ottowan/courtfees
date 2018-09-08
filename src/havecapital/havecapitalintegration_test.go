@@ -57,9 +57,31 @@ func Test_CalculateHaveCapital_feeCapital_50000001_Should_Be_200000_001(t *testi
 	}
 }
 
-func Test_CalculateHaveCapital_feeCapital_526845694_Should_Be_10536913_88(t *testing.T) {
+func Test_CalculateHaveCapital_feeCapital_526845694_Should_Be_676845_694(t *testing.T) {
 	feeCapital := 526845694.00
 	expectedFeePrice := 676845.694
+
+	actualFeePrice := CalculateHaveCapital(feeCapital)
+
+	if expectedFeePrice != actualFeePrice {
+		t.Errorf("Expected %v but i got %v", expectedFeePrice, actualFeePrice)
+	}
+}
+
+func Test_CalculateHaveCapital_feeCapital_250000_Should_Be_1000(t *testing.T) {
+	feeCapital := 250000.00
+	expectedFeePrice := 1000.00
+
+	actualFeePrice := CalculateHaveCapital(feeCapital)
+
+	if expectedFeePrice != actualFeePrice {
+		t.Errorf("Expected %v but i got %v", expectedFeePrice, actualFeePrice)
+	}
+}
+
+func Test_CalculateHaveCapital_feeCapital_20000_Should_Be_400(t *testing.T) {
+	feeCapital := 20000.00
+	expectedFeePrice := 400.00
 
 	actualFeePrice := CalculateHaveCapital(feeCapital)
 
