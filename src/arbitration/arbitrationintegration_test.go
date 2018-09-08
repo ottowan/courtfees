@@ -61,3 +61,15 @@ func Test_Arbitration_Input_feeCapital_7500000_Should_Be_80000(t *testing.T) {
 		t.Errorf("Expected %v but i got %v", expectedfeePrice, actualFeeCapital)
 	}
 }
+
+func Test_Arbitration_Input_feeCapital_10000000_Should_Be_100000(t *testing.T) {
+	person := 1
+	feeCapital := 10000000.00
+	expectedfeePrice := 100000.00
+
+	actualFeeCapital := CalculateArbitration(person, feeCapital)
+
+	if expectedfeePrice != actualFeeCapital {
+		t.Errorf("Expected %v but i got %v", expectedfeePrice, actualFeeCapital)
+	}
+}
