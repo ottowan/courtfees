@@ -56,3 +56,14 @@ func Test_CalculateHaveCapital_feeCapital_50000001_Should_Be_200000_001(t *testi
 		t.Errorf("Expected %v but i got %v", expectedFeePrice, actualFeePrice)
 	}
 }
+
+func Test_CalculateHaveCapital_feeCapital_526845694_Should_Be_10536913_88(t *testing.T) {
+	feeCapital := 526845694.00
+	expectedFeePrice := 676845.694
+
+	actualFeePrice := CalculateHaveCapital(feeCapital)
+
+	if expectedFeePrice != actualFeePrice {
+		t.Errorf("Expected %v but i got %v", expectedFeePrice, actualFeePrice)
+	}
+}
