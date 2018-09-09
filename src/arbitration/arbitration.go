@@ -248,7 +248,7 @@ func CheckCapitalBetween100m1to500mPersonOverOne(feeCapital float64) bool {
 }
 
 func CheckCapitalBetween500m1to1000m(feeCapital float64) bool {
-	if feeCapital > 500000000 && feeCapital <= 10000000000 {
+	if feeCapital > 500000000 && feeCapital <= 1000000000 {
 		return true
 	}
 
@@ -256,7 +256,7 @@ func CheckCapitalBetween500m1to1000m(feeCapital float64) bool {
 }
 
 func CheckCapitalBetween500m1to1000mPersonOverOne(feeCapital float64) bool {
-	if feeCapital > 500000000 && feeCapital <= 10000000000 {
+	if feeCapital > 500000000 && feeCapital <= 1000000000 {
 		return true
 	}
 
