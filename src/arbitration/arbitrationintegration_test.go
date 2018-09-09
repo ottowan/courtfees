@@ -145,3 +145,51 @@ func Test_Arbitration_Input_feeCapital_50000000_Should_Be_250000(t *testing.T) {
 		t.Errorf("Expected %v but i got %v", expectedfeePrice, actualFeeCapital)
 	}
 }
+
+func Test_Arbitration_Input_feeCapital_75000000_Should_Be_275000(t *testing.T) {
+	person := 1
+	feeCapital := 75000000.00
+	expectedfeePrice := 275000.00
+
+	actualFeeCapital := CalculateArbitration(person, feeCapital)
+
+	if expectedfeePrice != actualFeeCapital {
+		t.Errorf("Expected %v but i got %v", expectedfeePrice, actualFeeCapital)
+	}
+}
+
+func Test_Arbitration_Input_feeCapital_100000000_Should_Be_300000(t *testing.T) {
+	person := 1
+	feeCapital := 100000000.00
+	expectedfeePrice := 300000.00
+
+	actualFeeCapital := CalculateArbitration(person, feeCapital)
+
+	if expectedfeePrice != actualFeeCapital {
+		t.Errorf("Expected %v but i got %v", expectedfeePrice, actualFeeCapital)
+	}
+}
+
+func Test_Arbitration_Input_feeCapital_250000000_Should_Be_375000(t *testing.T) {
+	person := 1
+	feeCapital := 250000000.00
+	expectedfeePrice := 375000.00
+
+	actualFeeCapital := CalculateArbitration(person, feeCapital)
+
+	if expectedfeePrice != actualFeeCapital {
+		t.Errorf("Expected %v but i got %v", expectedfeePrice, actualFeeCapital)
+	}
+}
+
+func Test_Arbitration_Input_feeCapital_500000000_Should_Be_500000(t *testing.T) {
+	person := 1
+	feeCapital := 500000000.00
+	expectedfeePrice := 500000.00
+
+	actualFeeCapital := CalculateArbitration(person, feeCapital)
+
+	if expectedfeePrice != actualFeeCapital {
+		t.Errorf("Expected %v but i got %v", expectedfeePrice, actualFeeCapital)
+	}
+}
