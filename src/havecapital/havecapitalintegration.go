@@ -11,14 +11,18 @@ func CalculateHaveCapital(feeCapital float64) float64 {
 			return InitFreePriceEqualFreePrice(freePrice)
 		}
 	} else if CheckHaveCapitalOver50m(feeCapital) {
+
 		return CaluculateHaveCapitalOver50m(feeCapital)
+
 	} else if CheckHaveCapital1to300k(feeCapital) {
+
 		freePrice := CalculateHaveCapital1to300k(feeCapital)
 		if CheckFeePriceOver1000(freePrice) {
 			return InitFreePrice1000()
 		} else {
 			return InitFreePriceEqualFreePrice(freePrice)
 		}
+
 	}
 	return 0.00
 

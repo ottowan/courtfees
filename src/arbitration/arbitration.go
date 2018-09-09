@@ -183,7 +183,7 @@ func CheckCapitalBetween20m1to35mPersonOverOne(feeCapital float64) bool {
 	return false
 }
 
-func CheckCapitalBetween30m1to50m(feeCapital float64) bool {
+func CheckCapitalBetween35m1to50m(feeCapital float64) bool {
 
 	capitalMin := 35000000.00
 	capitalMaX := 50000000.00
@@ -195,7 +195,7 @@ func CheckCapitalBetween30m1to50m(feeCapital float64) bool {
 	return false
 }
 
-func CheckCapitalBetween30m1to50mPersonOverOne(feeCapital float64) bool {
+func CheckCapitalBetween35m1to50mPersonOverOne(feeCapital float64) bool {
 
 	capitalMin := 35000000.00
 	capitalMaX := 50000000.00
