@@ -30,3 +30,34 @@ func CheckSectionType288_1(section string) bool {
 	return false
 
 }
+
+func CheckSectionType227(section string) bool {
+
+	sectionReturn := "227"
+	if section == sectionReturn {
+		return true
+	}
+
+	return false
+
+}
+func CheckSectionType288_2(section string) bool {
+
+	sectionReturn := "288(2)"
+	if section == sectionReturn {
+		return true
+	}
+
+	return false
+
+}
+func CheckSectionType288_3(section string) bool {
+
+	sectionReturn := "288(3)"
+	if section == sectionReturn {
+		return true
+	}
+
+	return false
+
+}

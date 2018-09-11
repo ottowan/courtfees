@@ -8,6 +8,7 @@ import (
 	"strconv"
 	"time"
 
+	arb "./arbitration"
 	hc "./havecapital"
 	mg "./mortgage"
 	nc "./noncapital"
@@ -24,16 +25,11 @@ type Todo struct {
 type Todos []Todo
 
 func main() {
-	//router := mux.NewRouter()
-	//router.HandleFunc("/havecapital", GetHaveCapital).Methods("GET")
 
-	// http.HandleFunc("/", index)
-	// http.HandleFunc("/example", example)
 	http.HandleFunc("/havecapital", havecapital)
-	http.HandleFunc("/nonecapital", havecapital)
+	http.HandleFunc("/noncapital", noncapital)
 	http.HandleFunc("/mortgage", mortgage)
 	http.HandleFunc("/arbitration", arbitration)
-	//http.HandleFunc("/courtfees/{type}", courtfeesArbitation)
 
 	fmt.Printf("GOLANG server @port 9090")
 	err := http.ListenAndServeTLS(":9090", "./cert/server.crt", "./cert/server.key", nil)
@@ -103,12 +99,11 @@ func noncapital(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 
+	section := r.Form.Get("section")
 	feeCapital := r.Form.Get("feeCapital")
 
-	//fmt.Printf("%s", feeCapital)
-
 	feeCapitalFloat, err := strconv.ParseFloat(feeCapital, 64)
-	result := nc.CalculateNonCapital("", feeCapitalFloat)
+	result := nc.CalculateNonCapital(section, feeCapitalFloat)
 	todos := Fee{FeePrice: result}
 
 	if err := json.NewEncoder(w).Encode(todos); err != nil {
@@ -142,7 +137,30 @@ func mortgage(w http.ResponseWriter, r *http.Request) {
 }
 
 func arbitration(w http.ResponseWriter, r *http.Request) {
-	r.GetBody()
+
+	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type,access-control-allow-origin, access-control-allow-headers")
+	w.WriteHeader(http.StatusOK)
+
+	err := r.ParseForm()
+	if err != nil {
+		panic(err)
+	}
+
+	feeCapital := r.Form.Get("feeCapital")
+	amountPerson := r.Form.Get("amountPerson")
+
+	//fmt.Printf("%s", feeCapital)
+
+	feeCapitalFloat, err := strconv.ParseFloat(feeCapital, 64)
+	amountPersonInt, err := strconv.ParseInt(amountPerson, 10, 0)
+	result := arb.CalculateArbitration(int(amountPersonInt), feeCapitalFloat)
+	todos := Fee{FeePrice: result}
+
+	if err := json.NewEncoder(w).Encode(todos); err != nil {
+		panic(err)
+	}
 }
 
 // type ResponseCommands struct {
