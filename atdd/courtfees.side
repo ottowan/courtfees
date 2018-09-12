@@ -1,0 +1,89 @@
+{
+  "id": "ea26e5f0-8a82-4615-b314-8fad94409b7c",
+  "version": "1.1",
+  "name": "Untitled Project",
+  "url": "https://localhost",
+  "tests": [{
+    "id": "887bffbc-2578-442d-9def-7544728c9bb4",
+    "name": "havecapital",
+    "commands": [{
+      "id": "d1b23d16-bab3-4958-9c28-327f479a25fc",
+      "comment": "",
+      "command": "open",
+      "target": "/courtfees",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bde0f280-6a9e-4fe9-86ff-194898087dbe",
+      "comment": "",
+      "command": "click",
+      "target": "id=havecapital",
+      "targets": [
+        ["id=havecapital", "id"],
+        ["name=inlineRadioOptions", "name"],
+        ["css=#havecapital", "css"],
+        ["xpath=//input[@id='havecapital']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "75a023f8-b279-4e86-986c-40248ebe8c60",
+      "comment": "",
+      "command": "type",
+      "target": "id=feeCapital",
+      "targets": [
+        ["id=feeCapital", "id"],
+        ["css=#feeCapital", "css"],
+        ["xpath=//input[@id='feeCapital']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "0"
+    }, {
+      "id": "9412fcfa-c112-420d-88d4-e2e94a670f29",
+      "comment": "",
+      "command": "click",
+      "target": "id=calculate",
+      "targets": [
+        ["id=calculate", "id"],
+        ["css=#calculate", "css"],
+        ["xpath=//button[@id='calculate']", "xpath:attributes"],
+        ["xpath=//div[5]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "922d3da1-4dd1-4032-990c-56f04e06b71d",
+      "comment": "",
+      "command": "type",
+      "target": "id=feeCapital",
+      "targets": [
+        ["id=feeCapital", "id"],
+        ["css=#feeCapital", "css"],
+        ["xpath=//input[@id='feeCapital']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "20000"
+    }, {
+      "id": "2743a87e-7928-4830-adda-0fd8fd05e6d7",
+      "comment": "",
+      "command": "click",
+      "target": "id=calculate",
+      "targets": [
+        ["id=calculate", "id"],
+        ["css=#calculate", "css"],
+        ["xpath=//button[@id='calculate']", "xpath:attributes"],
+        ["xpath=//div[5]/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "c83a87a2-94ec-48cf-b93d-c8fa12903d11",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["887bffbc-2578-442d-9def-7544728c9bb4"]
+  }],
+  "urls": ["https://localhost/"],
+  "plugins": []
+}

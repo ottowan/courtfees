@@ -5,62 +5,36 @@ var fs = require("fs");
 var path = require("path");
 var request = require("request");
 
+const fetch = require("node-fetch");
+
 var endpoint = "https://localhost:8080";
 var app = express();
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
+app.use(express.static(__dirname + "/views"));
+
 // This line is from the Node.js HTTPS documentation.
 var options = {
-  key: fs.readFileSync("./key.pem"),
-  cert: fs.readFileSync("./cert.pem"),
+  key: fs.readFileSync("./cert/key.pem"),
+  cert: fs.readFileSync("./cert/cert.pem"),
   passphrase: "xibPPk27"
 };
 
 // Create a service (the app object is just a callback).
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", {active : "index"});
 });
 
-app.get("/havecapital", (req, res) => {
-  var req = https.request(
-    {
-      host: "localhost",
-      port: 8080,
-      path: '/courtfees',
-      method: 'GET',
-      rejectUnauthorized: false,
-      requestCert: true,
-      agent: false
-    },
-    function(res) {
-      var body = [];
-      res.on("data", function(data) {
-        body.push(data);
-      });
-
-      res.on("end", function() {
-        console.log(body.join(""));
-      });
-
-      console.log(body)
-    }
-  );
-  req.end();
-
-  req.on("error", function(err) {
-    console.log(err);
-  });
-
-
+// Create a service (the app object is just a callback).
+app.get("/courtfees", (req, res) => {
+  res.render("courtfees", {active : "courtfees"});
+});
+// Create a service (the app object is just a callback).
+app.get("/arbitration", (req, res) => {
+  res.render("arbitration", {active : "arbitration"});
 });
 
-// async function fetchHaveCapital() {
-//   let response = await fetch(endpoint + "/courtfees");
-//   let responseJson = await response.json();
-//   let fromServer = responseJson.myString;
-//   console.log(fromServer);
-// }
 
 https.createServer(options, app).listen(443);
 console.log("Start server on port : 443");

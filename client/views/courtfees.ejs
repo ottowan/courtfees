@@ -1,0 +1,145 @@
+<!-- Header -->
+<% include ./header %>
+
+<!-- Menu -->
+
+<div class="menu d-flex flex-column align-items-center justify-content-center">
+	<div class="menu_content">
+		<div class="cross_1 d-flex flex-column align-items-center justify-content-center"><img src="images/logo.png" alt=""></div>
+		<form action="#" class="menu_search_form">
+			<input type="search" class="menu_search_input" placeholder="Search" required="required">
+			<button class="menu_search_button d-flex flex-column align-items-center justify-content-center">
+				<i class="fa fa-search" aria-hidden="true"></i>
+			</button>
+		</form>
+		<nav class="menu_nav">
+			<ul>
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="sermons.html">Sermons</a></li>
+				<li><a href="events.html">Events</a></li>
+				<li><a href="blog.html">Blog</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="menu_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+</div>
+
+
+
+<!-- Latest Sermon -->
+<div class="latest" style="padding-top:120px">
+	<div class="container-fluid" style="padding-top: 20px; padding-bottom:20px;">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					<strong>Holy guacamole!</strong> You should check in on some of those fields below.
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="card">
+					<div class="card-header text-white bg-primary">
+						<h4>คำนวนค่าธรรมเนียมศาล</h4>
+					</div>
+					<div class="card-body border-primary">
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="form-check form-check-inline" style="padding-left:20px;padding-right:20px;padding-bottom:10px;">
+									<input class="form-check-input" type="radio" name="inlineRadioOptions" id="havecapital" value="havecapital"
+									 checked>
+									<label class="form-check-label" for="inlineRadio1">มีทุนทรัพย์</label>
+								</div>
+								<div class="form-check form-check-inline" style="padding-left:20px;padding-right:20px;padding-bottom:10px;">
+									<input class="form-check-input" type="radio" name="inlineRadioOptions" id="noncapital" value="noncapital">
+									<label class="form-check-label" for="inlineRadio1">ไม่มีทุนทรัพย์</label>
+								</div>
+								<div class="form-check form-check-inline" style="padding-left:20px;">
+									<input class="form-check-input" type="radio" name="inlineRadioOptions" id="mortgage" value="mortgage">
+									<label class="form-check-label" for="inlineRadio2">บังคับจำนอง</label>
+								</div>
+								<br>
+								<div class="form-group">
+									<label for="exampleFormControlInput1">จำนวนทุนทรัพย์</label>
+									<input class="form-control" id="feeCapital" placeholder="" value="20000">
+								</div>
+								<br>
+								<div class="form-group">
+									<button id="calculate" type="button" class="btn btn-success">คำนวนค่าธรรมเนียม</button>
+								</div>
+								<br>
+								<p><span style="color:red">หมายเหตุ</span> *ค่าใช้จ่ายที่ท่านจะได้รับทราบเป็นค่าใช้จ่ายโดยประมาณเท่านั้น
+									ไม่สามารถใช้อ้างอิงในการใช้บริการจริงได้</p>
+
+
+							</div>
+
+
+							<div class="col-lg-6">
+								<% include ./bill_template %>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="./js/space_line.js"></script>
+<script>
+	$(document).ready(function () {
+
+		var selectType = "havecapital"
+		$('#havecapital').click(function () {
+			//if ($('#havcapital').is(':checked')) { alert("havcapital checked"); }
+			selectType = "havecapital"
+		});
+
+		$('#noncapital').click(function () {
+			//if ($('#noncapital').is(':checked')) { alert("noncapital checked"); }
+			selectType = "noncapital"
+		});
+
+		$('#mortgage').click(function () {
+			//if ($('#mortgage').is(':checked')) { alert("mortgage checked"); }
+
+			selectType = "mortgage"
+		});
+
+		$("#calculate").click(function () {
+			var feeCapital = $("#feeCapital").val();
+			var sendData = { feeCapital: feeCapital }
+			var endpoint = "https://localhost:9090/" + selectType
+
+			//alert(endpoint)
+			$.post(endpoint, sendData, function (result) {
+
+				console.log(result)
+				//Render space & result data
+				var feePrice = result.feePrice.toLocaleString()+".00"
+				var lengthFeePrice = feePrice.length
+				//alert(lengthFeePrice)
+				var spaceText = calculateSpace(lengthFeePrice)
+				$("#result").html(loopSpace(spaceText) + feePrice)
+
+				//alert(lengthFeePrice)
+			});
+
+		});
+
+
+	});
+</script>
+
+
+<!-- Footer -->
+<% include ./footer %>

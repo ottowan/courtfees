@@ -1,0 +1,348 @@
+<div style="border: 1px solid #ced4da; padding-left: 20px; padding-right: 20px">
+    <br><br>
+
+    <div class="col-lg-12">
+        <h3 class="text-center">ใบเสร็จรับเงิน</h3>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <p class="text-left"><img src="./images/uncheck.png" height="14"> เงินกลาง</p>
+
+        </div>
+        <div class="col-lg-6">
+            <p class="text-right">ศาล
+                <span class="underline_dotted" id="court_name">
+                    <%- loopSpace(78) %>
+                </span>
+            </p>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <p class="text-left"><img src="./images/checked.png" height="14"> ค่าธรรมเนียมศาล</p>
+
+        </div>
+        <div class="col-lg-6">
+            <p class="text-right">ศาล
+                <span class="underline_dotted" id="court_name">
+                    <%- loopSpace(78) %>
+                </span>
+            </p>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <p class="text-left"><img src="./images/uncheck.png" height="14"> ค่าปรับ</p>
+
+        </div>
+        <div class="col-lg-6">
+            <p class="text-right">ศาล
+                <span class="underline_dotted" id="court_name">
+                    <%- loopSpace(78) %>
+                </span>
+            </p>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <p class="text-left"><img src="./images/uncheck.png" height="14"> เงินอื่นๆ</p>
+
+        </div>
+        <div class="col-lg-6">
+            <p class="text-right">ศาล
+                <span class="underline_dotted" id="court_name">
+                    <%- loopSpace(78) %>
+                </span>
+            </p>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <p class="text-left">&nbsp;&nbsp;&nbsp;&nbsp;ได้รับเงินจาก
+                <span class="underline_dotted" id="court_name">
+                    <%- loopSpace(180) %>
+                </span>
+            </p>
+
+        </div>
+    </div>
+    <br>
+
+    <!-- start table 1-->
+    <div class="row" style="padding-left:15px !important; padding-right:15px !important;  padding-bottom:15px !important; ">
+        <table style="border: 1px solid #ced4da !important;" width="100%">
+            <thead>
+                <tr>
+                    <th width="70%" class="text-center solid_table">รายการ</th>
+                    <th width="30%" class="text-center solid_table">จำนวนเงิน (บาท)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="solid_table_main">
+                        <p>๑.เงินกลางค่า
+
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(90) %>
+                            </span>
+
+                        </p>
+                    </td>
+                    <td class="solid_table_main">
+                        <p class="text-center">
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(55) %>
+                            </span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="solid_table_sub">
+                        <p>๒.ค่าธรรมเนียม</p>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="solid_table_sub">
+                        <p> &nbsp;&nbsp;&nbsp;&nbsp;ค่าขึ้นศาล
+                            <span class="underline_dotted" id="result_aa">
+                                <%- loopSpace(65) %>
+                            </span>
+                        </p>
+                    </td>
+                    <td class="solid_table_sub">
+                        <p class="text-center">
+                            <span class="underline_dotted" id="result">
+                                <%- loopSpace(55) %>
+                            </span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="solid_table_sub">
+                        <p> &nbsp;&nbsp;&nbsp;&nbsp;ค่าขึ้นศาลอนาคต
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(65) %>
+                            </span>
+                        </p>
+                    </td>
+                    <td class="solid_table_sub">
+                        <p class="text-center">
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(55) %>
+                            </span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="solid_table_sub">
+                        <p> &nbsp;&nbsp;&nbsp;&nbsp;ค่าคำร้องสืบพยานล่วงหน้า
+                        </p>
+                    </td>
+                    <td class="solid_table_sub">
+                        <p class="text-center">
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(55) %>
+                            </span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="solid_table_sub">
+                        <p>
+                            <%- loopSpace(3) %>ค่ารับรองสำเนาเอกสาร
+                        </p>
+                    </td>
+                    <td class="solid_table_sub">
+                        <p class="text-center">
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(55) %>
+                            </span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="solid_table_sub">
+                        <p> &nbsp;&nbsp;&nbsp;&nbsp;ค่าใบสำคัญรับรองคดีถึงที่สุด
+                        </p>
+                    </td>
+                    <td class="solid_table_sub">
+                        <p class="text-center">
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(55) %>
+                            </span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="solid_table_sub">
+                        <p> &nbsp;&nbsp;&nbsp;&nbsp;ค่าอื่นๆ
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(65) %>
+                            </span>
+                        </p>
+                    </td>
+                    <td class="solid_table_sub">
+                        <p class="text-center">
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(55) %>
+                            </span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="solid_table_sub">
+                        <p>๓.ค่าปรับ
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(65) %>
+                            </span>
+                        </p>
+                    </td>
+                    <td class="solid_table_sub">
+                        <p class="text-center">
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(55) %>
+                            </span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="solid_table_sub">
+                        <p>๔.เงินอื่นๆ
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(65) %>
+                            </span>
+                        </p>
+                    </td>
+                    <td class="solid_table_sub">
+                        <p class="text-center">
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(55) %>
+                            </span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="solid_table_sub">
+                        <p>เงินสด
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(45) %>
+                            </span>
+                            บาท
+                            &nbsp;&nbsp;เช็ค/บัตร
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(45) %>
+                            </span>
+                            บาท
+                        </p>
+                    </td>
+                    <td class="solid_table_sub">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="solid_table_sub">
+                        <p>
+                            เลขที่เช็ค/เลขที่ใบบันทึกรายการ
+                            &nbsp;&nbsp;ธนาคารสาขา/ผู้ออกบัตร
+                            &nbsp;&nbsp;จำนวนเงิน
+                        </p>
+                    </td>
+                    <td class="solid_table_sub">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="solid_table_sub">
+                        <p>
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(63) %>
+                            </span>
+                            &nbsp;&nbsp;
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(47) %>
+                            </span>
+                            &nbsp;&nbsp;
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(25) %>
+                            </span>
+                        </p>
+                    </td>
+                    <td class="solid_table_sub">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="solid_table_sub">
+                        <p>
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(63) %>
+                            </span>
+                            &nbsp;&nbsp;
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(47) %>
+                            </span>
+                            &nbsp;&nbsp;
+                            <span class="underline_dotted" id="court_name">
+                                <%- loopSpace(25) %>
+                            </span>
+                        </p>
+                    </td>
+                    <td class="solid_table_sub">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="solid_table_sub">
+                        <p>ชื่อเจ้าของบัตร
+                            <span class="underline_dotted" id="result_aa">
+                                <%- loopSpace(115) %>
+                            </span>
+                        </p>
+                        <br>
+                    </td>
+                    <td class="solid_table_sub">
+                    </td>
+                </tr>
+                <thead>
+                    <tr>
+                        <th width="70%" class="text-center solid_table"  style="padding-top: 15px !important;padding-bottom: 15px !important;">
+                            <p>(รวมเป็นจำนวนเงิน
+                                <span class="underline_dotted" id="result_aa">
+                                    <%- loopSpace(100) %>
+                                </span>บาท)
+                                <br>(ตัวอักษร)
+                            </p>
+                        </th>
+                        <th width="30%" class="text-center solid_table"  style="padding-bottom: 15px !important;">
+                            <p>
+                                <span class="underline_dotted">
+                                    <%- loopSpace(55) %>
+                                </span>
+                            </p>
+                        </th>
+                    </tr>
+                </thead>
+
+            </tbody>
+        </table>
+    </div>
+    <!-- end table 1-->
+</div>
+<br>
+
+<%
+    function loopSpace(count) {
+
+        var loopSpaceWrite = ""
+        for (i = 0; i <= count; i++) {
+            loopSpaceWrite += "&nbsp;"
+        }
+
+        return loopSpaceWrite
+    }
+%>
