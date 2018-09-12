@@ -35,9 +35,9 @@ func Test_CalculateHaveCapital_feeCapital_50000000_Should_Be_200000(t *testing.T
 	}
 }
 
-func Test_CalculateHaveCapital_feeCapital_300001_Should_Be_6000_02(t *testing.T) {
+func Test_CalculateHaveCapital_feeCapital_300001_Should_Be_6000(t *testing.T) {
 	feeCapital := 300001.00
-	expectedFeePrice := 6000.02
+	expectedFeePrice := 6000.00
 
 	actualFeePrice := CalculateHaveCapital(feeCapital)
 
@@ -46,9 +46,9 @@ func Test_CalculateHaveCapital_feeCapital_300001_Should_Be_6000_02(t *testing.T)
 	}
 }
 
-func Test_CalculateHaveCapital_feeCapital_50000001_Should_Be_200000_001(t *testing.T) {
+func Test_CalculateHaveCapital_feeCapital_50000001_Should_Be_200000(t *testing.T) {
 	feeCapital := 50000001.00
-	expectedFeePrice := 200000.001
+	expectedFeePrice := 200000.00
 
 	actualFeePrice := CalculateHaveCapital(feeCapital)
 
@@ -57,9 +57,9 @@ func Test_CalculateHaveCapital_feeCapital_50000001_Should_Be_200000_001(t *testi
 	}
 }
 
-func Test_CalculateHaveCapital_feeCapital_526845694_Should_Be_676845_694(t *testing.T) {
+func Test_CalculateHaveCapital_feeCapital_526845694_Should_Be_676845(t *testing.T) {
 	feeCapital := 526845694.00
-	expectedFeePrice := 676845.694
+	expectedFeePrice := 676845.00
 
 	actualFeePrice := CalculateHaveCapital(feeCapital)
 

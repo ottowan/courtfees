@@ -54,7 +54,7 @@ func Test_CalculateMortgage_Input_feeCapital_50000_Sholud_Be_500(t *testing.T) {
 
 func Test_CalculateMortgage_Input_feeCapital_300001_Sholud_Be_3000_01(t *testing.T) {
 	feeCapital := 300001.00
-	expectedFeeCapital := 3000.01
+	expectedFeeCapital := 3000.00
 	actualFeeCapital := CalculateMortgage(feeCapital)
 
 	if expectedFeeCapital != actualFeeCapital {

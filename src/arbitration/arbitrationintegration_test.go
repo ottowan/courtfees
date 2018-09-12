@@ -205,10 +205,10 @@ func Test_Arbitration_Input_person_1_feeCapital_500000000_Should_Be_500000(t *te
 	}
 }
 
-func Test_Arbitration_Input_person_1_feeCapital_526845694_Should_Be_510738_28(t *testing.T) {
+func Test_Arbitration_Input_person_1_feeCapital_526845694_Should_Be_510738(t *testing.T) {
 	person := 1
 	feeCapital := 526845694.00
-	expectedfeePrice := 510738.27760000003
+	expectedfeePrice := 510738.00
 
 	actualFeeCapital := CalculateArbitration(person, feeCapital)
 
@@ -468,10 +468,10 @@ func Test_Arbitration_Input_person_3_feeCapital_500000000_Should_Be_1000000(t *t
 	}
 }
 
-func Test_Arbitration_Input_person_3_feeCapital_526845694_Should_Be_1021476_56(t *testing.T) {
+func Test_Arbitration_Input_person_3_feeCapital_526845694_Should_Be_1021476(t *testing.T) {
 	person := 3
 	feeCapital := 526845694.00
-	expectedfeePrice := 1021476.55520000006
+	expectedfeePrice := 1021476.00
 
 	actualFeeCapital := CalculateArbitration(person, feeCapital)
 

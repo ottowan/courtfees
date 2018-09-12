@@ -125,8 +125,6 @@ func mortgage(w http.ResponseWriter, r *http.Request) {
 
 	feeCapital := r.Form.Get("feeCapital")
 
-	//fmt.Printf("%s", feeCapital)
-
 	feeCapitalFloat, err := strconv.ParseFloat(feeCapital, 64)
 	result := mg.CalculateMortgage(feeCapitalFloat)
 	todos := Fee{FeePrice: result}
@@ -151,8 +149,6 @@ func arbitration(w http.ResponseWriter, r *http.Request) {
 	feeCapital := r.Form.Get("feeCapital")
 	amountPerson := r.Form.Get("amountPerson")
 
-	//fmt.Printf("%s", feeCapital)
-
 	feeCapitalFloat, err := strconv.ParseFloat(feeCapital, 64)
 	amountPersonInt, err := strconv.ParseInt(amountPerson, 10, 0)
 	result := arb.CalculateArbitration(int(amountPersonInt), feeCapitalFloat)
@@ -162,63 +158,3 @@ func arbitration(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 }
-
-// type ResponseCommands struct {
-// 	key   string
-// 	value string
-// }
-
-// const jsonStream = `
-// 	{"ID": 1, "Title": "title 1", "Done": false}
-// 	{"ID": 2, "Title": "title 2", "Done": false}
-
-// type Task struct {
-// 	ID    int64
-// 	Title string
-// 	Done  bool
-// }
-
-// type Todo struct {
-// 	Name      string
-// 	Completed bool
-// 	Due       time.Time
-// }
-// type Todos []Todo
-
-// type FeePrice struct {
-// 	feePrice string
-// }
-// type FeePrices []FeePrice
-
-// func GetHaveCapital(w http.ResponseWriter, r *http.Request) {
-// 	result := hc.CaluculateHaveCapitalOver50m(10000.00)
-// 	fmt.Println(result)
-// 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
-// 	w.WriteHeader(http.StatusOK)
-
-// 	feePrices := FeePrices{
-// 		FeePrice{feePrice: "3.14"},
-// 	}
-
-// 	if err := json.NewEncoder(w).Encode(feePrices); err != nil {
-// 		panic(err)
-// 	}
-
-// }
-
-// func Examples(w http.ResponseWriter, r *http.Request) {
-// 	// result := hc.CaluculateHaveCapitalOver50m(10000.00)
-
-// 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
-// 	w.WriteHeader(http.StatusOK)
-
-// 	todos := Todos{
-// 		Todo{Name: "Write presentation"},
-// 		Todo{Name: "Host meetup"},
-// 	}
-
-// 	if err := json.NewEncoder(w).Encode(todos); err != nil {
-// 		panic(err)
-// 	}
-
-// }
