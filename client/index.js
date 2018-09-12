@@ -21,11 +21,11 @@ app.use(express.static(__dirname + "/views"));
 // var options = {
 //   key: fs.readFileSync("./cert/key.pem"),
 //   cert: fs.readFileSync("./cert/cert.pem"),
-//   passphrase: "xibPPk27"
+//   passphrase: "password"
 // };
 
 var options = {
-  pfx: fs.readFileSync('./cert/CertCOJ.pfx'),
+  pfx: fs.readFileSync('./cert/Cert.pfx'),
   passphrase: config.certPassword()
 };
 

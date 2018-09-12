@@ -7,8 +7,7 @@ import (
 	"net/http"
 	"strconv"
 	"time"
-	"golang.org/x/crypto/pkcs12"
-	
+
 	arb "./arbitration"
 	hc "./havecapital"
 	mg "./mortgage"
@@ -32,8 +31,8 @@ func main() {
 	http.HandleFunc("/mortgage", mortgage)
 	http.HandleFunc("/arbitration", arbitration)
 
-	fmt.Printf("GOLANG server @port 9090")
-	err := http.ListenAndServeTLS(":9090", "./cert/server.crt", "./cert/server.key", nil)
+	fmt.Printf("GOLANG server @port 8080")
+	err := http.ListenAndServeTLS(":8080", "./cert/server.crt", "./cert/server-decrypted.key", nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
