@@ -118,7 +118,7 @@
 		$("#calculate").click(function () {
 			var feeCapital = $("#feeCapital").val();
 			var sendData = { feeCapital: feeCapital }
-			var endpoint = "https://localhost:9090/" + selectType
+			var endpoint = "https://localhost:8080/" + selectType
 
 			//alert(endpoint)
 			$.post(endpoint, sendData, function (result) {

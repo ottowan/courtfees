@@ -114,7 +114,7 @@
 			$("#calculate").click(function () {
 				var feeCapital = $("#feeCapital").val();
 				var sendData = { amountPerson: amountPerson, feeCapital: feeCapital }
-				var endpoint = "https://localhost:9090/arbitration"
+				var endpoint = "https://localhost:8080/arbitration"
 
 				//alert(endpoint)
 				$.post(endpoint, sendData, function (result) {
