@@ -2,18 +2,16 @@ package noncapital
 
 import "testing"
 
-func Test_CheckFeeTypeNonCapital_Input_feeType_noncapital_Should_Be_True(t *testing.T) {
+func Test_CheckFeeCapitalEqual0_Input_0_Should_be_true(t *testing.T) {
+	expectedResult := true
+	feeCapital := 0.00
+	actualResult := CheckFeeCapitalEqual0(feeCapital)
 
-	feeType := "ไม่มีทุนทรัพย์"
-	expectedFeeType := true
+	if expectedResult != actualResult {
+		t.Errorf("Expected %v but got it %v", expectedResult, actualResult)
 
-	actualFeeType := CheckFeeTypeNonCapital(feeType)
-
-	if expectedFeeType != actualFeeType {
-		t.Errorf("Expected %v but got %v", expectedFeeType, actualFeeType)
 	}
 }
-
 func Test_InitFeePrice0_Input_Should_Be_0(t *testing.T) {
 	expectedFeePrice := 0.00
 

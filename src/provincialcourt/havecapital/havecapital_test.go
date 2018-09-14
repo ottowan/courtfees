@@ -57,17 +57,6 @@ func Test_CheckHaveCapital1to50M_Input_feeCapital_250000_Should_Be_true(t *testi
 	}
 }
 
-func Test_CheckFeeTypeHaveCapital_Input_feeType_havecapital_Shoud_Be_true(t *testing.T) {
-	expectedFeeType := true
-	feeType := "มีทุนทรัพย์"
-
-	actualFeeType := CheckFeeTypeHaveCapital(feeType)
-
-	if expectedFeeType != actualFeeType {
-		t.Errorf("Expected %v but got it %v", expectedFeeType, actualFeeType)
-	}
-}
-
 func Test_CheckFeePriceOver200k_Input_feePrice_1000000_Should_Be_20000(t *testing.T) {
 	expectedFeePrice := true
 	feePrice := 1000000.00

@@ -1,10 +1,7 @@
 package noncapital
 
-func CheckFeeTypeNonCapital(feeType string) bool {
-
-	feeTypeResult := "ไม่มีทุนทรัพย์"
-
-	if feeTypeResult == feeType {
+func CheckFeeCapitalEqual0(feeCapital float64) bool {
+	if feeCapital == 0 {
 		return true
 	}
 

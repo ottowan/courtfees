@@ -1,9 +1,5 @@
 package mortgage
 
-func CalculateMortgageBetween1to300k(feeCapital float64) float64 {
-	return feeCapital * 0.01
-}
-
 func CalculateMortgageBetween1to50m(feeCapital float64) float64 {
 	return feeCapital * 0.01
 }
@@ -37,18 +33,6 @@ func CheckFeePriceOver100k(feePrice float64) bool {
 	}
 
 	return false
-}
-
-func CheckFeeTypeMortgage(feeType string) bool {
-
-	feeTypeResult := "บังคับจำนอง"
-
-	if feeTypeResult == feeType {
-
-		return true
-	}
-	return false
-
 }
 
 func InitFeePriceEqual100k() float64 {

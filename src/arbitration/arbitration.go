@@ -310,14 +310,6 @@ func CheckCapitalOver2000mPersonOverOne(feeCapital float64) bool {
 	return false
 }
 
-func CheckFeeTypeArbitation(feeType string) bool {
-	if feeType == "อนุญาโต" {
-		return true
-	}
-
-	return false
-}
-
 func CheckPersonAmountOverOne(amount int) bool {
 	if amount > 1 {
 		return true

@@ -493,18 +493,6 @@ func Test_CheckCapitalOver2000mPersonOverOne_Input_feeCapital_10000m_Should_be_t
 	}
 }
 
-func Test_CheckFeeTypeArbitation_Input_arbritation_Should_Be_true(t *testing.T) {
-
-	feeType := "อนุญาโต"
-	expectedResult := true
-
-	actualTResult := CheckFeeTypeArbitation(feeType)
-
-	if expectedResult != actualTResult {
-		t.Errorf("Expected %v but i got %v", expectedResult, actualTResult)
-	}
-}
-
 func Test_CheckPersonAmountOverOne_Input_1_Should_Be_false(t *testing.T) {
 	amount := 1
 	expectedResult := false

@@ -80,18 +80,6 @@ func Test_CheckFeePriceOver100k_Input_5000_Should_Be_true(t *testing.T) {
 
 }
 
-func Test_CheckFeeTypeMortgage_Input_feeType_mortgage_Slould_Be_True(t *testing.T) {
-
-	feeType := "บังคับจำนอง"
-	expectedFeeType := true
-
-	actualFeeType := CheckFeeTypeMortgage(feeType)
-
-	if expectedFeeType != actualFeeType {
-		t.Errorf("Expected %v but got %v", expectedFeeType, actualFeeType)
-	}
-}
-
 func Test_InitFeePriceEqual100k_Should_Be_100000(t *testing.T) {
 
 	expectedFeePrice := 100000.00

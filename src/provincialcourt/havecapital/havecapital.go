@@ -25,15 +25,6 @@ func CheckHaveCapital1to50m(feeCapital float64) bool {
 	return false
 }
 
-func CheckFeeTypeHaveCapital(feeType string) bool {
-
-	if feeType == "มีทุนทรัพย์" {
-		return true
-	}
-
-	return false
-}
-
 func CheckFeePriceOver200k(feePrice float64) bool {
 	assignFeePrice := 200000.00
 	if feePrice >= assignFeePrice {

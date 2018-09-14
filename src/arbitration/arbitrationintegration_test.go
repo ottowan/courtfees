@@ -2,6 +2,29 @@ package arbitration
 
 import "testing"
 
+func Test_Arbitration_Input_person_1_feeCapital_minus1_Should_Be_0(t *testing.T) {
+	person := 1
+	feeCapital := -1.00
+	expectedfeePrice := 0.00
+
+	actualFeeCapital := CalculateArbitration(person, feeCapital)
+
+	if expectedfeePrice != actualFeeCapital {
+		t.Errorf("Expected %v but i got %v", expectedfeePrice, actualFeeCapital)
+	}
+}
+
+func Test_Arbitration_Input_person_3_feeCapital_minus1_Should_Be_0(t *testing.T) {
+	person := 3
+	feeCapital := -1.00
+	expectedfeePrice := 0.00
+
+	actualFeeCapital := CalculateArbitration(person, feeCapital)
+
+	if expectedfeePrice != actualFeeCapital {
+		t.Errorf("Expected %v but i got %v", expectedfeePrice, actualFeeCapital)
+	}
+}
 func Test_Arbitration_Input_person_1_feeCapital_0_Should_Be_6000(t *testing.T) {
 	person := 1
 	feeCapital := 0.00
