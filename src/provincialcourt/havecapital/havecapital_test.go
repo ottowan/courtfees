@@ -2,15 +2,15 @@ package havecapital
 
 import "testing"
 
-func Test_InitFreePrice1000_Should_Be_1000(t *testing.T) {
-	expectedFreePrice := 1000.00
+// func Test_InitFreePrice1000_Should_Be_1000(t *testing.T) {
+// 	expectedFreePrice := 1000.00
 
-	actualFeePrice := InitFreePrice1000()
+// 	actualFeePrice := InitFreePrice1000()
 
-	if expectedFreePrice != actualFeePrice {
-		t.Errorf("Expected %v but got it %v", expectedFreePrice, actualFeePrice)
-	}
-}
+// 	if expectedFreePrice != actualFeePrice {
+// 		t.Errorf("Expected %v but got it %v", expectedFreePrice, actualFeePrice)
+// 	}
+// }
 
 func Test_InitFreePrice200k_Should_Be_200000(t *testing.T) {
 	expectedFreePrice := 200000.00
@@ -45,22 +45,22 @@ func Test_CheckHaveCapitalOver50m_Input_feeCapital_526845694_Should_Be_true(t *t
 
 }
 
-func Test_CheckHaveCapital300k1to50m_Input_feeCapital_40000000_Should_Be_true(t *testing.T) {
+func Test_CheckHaveCapital1to50m_Input_feeCapital_40000000_Should_Be_true(t *testing.T) {
 	expectedResult := true
 	feeCapital := 40000000.00
 
-	actualResult := CheckHaveCapital300k1to50m(feeCapital)
+	actualResult := CheckHaveCapital1to50m(feeCapital)
 
 	if expectedResult != actualResult {
 		t.Errorf("Expected %v but i got %v", expectedResult, actualResult)
 	}
 }
 
-func Test_CheckHaveCapital1to300k_Input_feeCapital_250000_Should_Be_true(t *testing.T) {
+func Test_CheckHaveCapital1to50M_Input_feeCapital_250000_Should_Be_true(t *testing.T) {
 	expectedResult := true
 	feeCapital := 250000.00
 
-	actualResult := CheckHaveCapital1to300k(feeCapital)
+	actualResult := CheckHaveCapital1to50m(feeCapital)
 
 	if expectedResult != actualResult {
 		t.Errorf("Expected %v but i got %v", expectedResult, actualResult)
@@ -78,16 +78,16 @@ func Test_CheckFeeTypeHaveCapital_Input_feeType_havecapital_Shoud_Be_true(t *tes
 	}
 }
 
-func Test_CheckFeePriceOver1000_Input_feePrice_1000000_Should_Be_20000(t *testing.T) {
-	expectedResult := true
-	feePrice := 5000.00
+// func Test_CheckFeePriceOver1000_Input_feePrice_1000000_Should_Be_20000(t *testing.T) {
+// 	expectedResult := true
+// 	feePrice := 5000.00
 
-	actualResult := CheckFeePriceOver1000(feePrice)
+// 	actualResult := CheckFeePriceOver1000(feePrice)
 
-	if expectedResult != actualResult {
-		t.Errorf("Expected %v but got it %v", expectedResult, actualResult)
-	}
-}
+// 	if expectedResult != actualResult {
+// 		t.Errorf("Expected %v but got it %v", expectedResult, actualResult)
+// 	}
+// }
 
 func Test_CheckFeePriceOver200k_Input_feePrice_1000000_Should_Be_20000(t *testing.T) {
 	expectedFeePrice := true
@@ -104,7 +104,7 @@ func Test_CalculateTriflesHaveCapital_Input_feeCapital_250000_Should_be_5000(t *
 	expectedFeePrice := 5000.00
 	feeCapital := 250000.00
 
-	actualFeePrice := CalculateHaveCapital1to300k(feeCapital)
+	actualFeePrice := CalculateHaveCapital1to50m(feeCapital)
 
 	if expectedFeePrice != actualFeePrice {
 		t.Errorf("Expected %v but i got %v", expectedFeePrice, actualFeePrice)
@@ -116,7 +116,7 @@ func Test_CalculateHaveCapitalRate_Input_feeCapital_40000000_Should_Be_80000(t *
 	expectedFeeprice := 800000.00
 	feeCapital := 40000000.00
 
-	actualFeeprice := CalculateHaveCapital300k1to50m(feeCapital)
+	actualFeeprice := CalculateHaveCapital1to50m(feeCapital)
 
 	if expectedFeeprice != actualFeeprice {
 		t.Errorf("Expected %v but i got %v ", expectedFeeprice, actualFeeprice)
