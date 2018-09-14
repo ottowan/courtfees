@@ -2,16 +2,6 @@ package havecapital
 
 import "testing"
 
-// func Test_InitFreePrice1000_Should_Be_1000(t *testing.T) {
-// 	expectedFreePrice := 1000.00
-
-// 	actualFeePrice := InitFreePrice1000()
-
-// 	if expectedFreePrice != actualFeePrice {
-// 		t.Errorf("Expected %v but got it %v", expectedFreePrice, actualFeePrice)
-// 	}
-// }
-
 func Test_InitFreePrice200k_Should_Be_200000(t *testing.T) {
 	expectedFreePrice := 200000.00
 
@@ -77,17 +67,6 @@ func Test_CheckFeeTypeHaveCapital_Input_feeType_havecapital_Shoud_Be_true(t *tes
 		t.Errorf("Expected %v but got it %v", expectedFeeType, actualFeeType)
 	}
 }
-
-// func Test_CheckFeePriceOver1000_Input_feePrice_1000000_Should_Be_20000(t *testing.T) {
-// 	expectedResult := true
-// 	feePrice := 5000.00
-
-// 	actualResult := CheckFeePriceOver1000(feePrice)
-
-// 	if expectedResult != actualResult {
-// 		t.Errorf("Expected %v but got it %v", expectedResult, actualResult)
-// 	}
-// }
 
 func Test_CheckFeePriceOver200k_Input_feePrice_1000000_Should_Be_20000(t *testing.T) {
 	expectedFeePrice := true
