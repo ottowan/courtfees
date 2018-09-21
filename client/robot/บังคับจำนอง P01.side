@@ -1,0 +1,303 @@
+{
+  "id": "5e30c012-49ef-41e1-92b7-4577859e034a",
+  "version": "1.1",
+  "name": "Untitled Project",
+  "url": "https://10.1.23.235",
+  "tests": [{
+    "id": "243ad149-7fb7-4e54-833d-733d959a6a0a",
+    "name": "ไม่มีทุนทรัพย์",
+    "commands": [{
+      "id": "a9f773e7-fdcc-43ff-b2fb-ced0b00fc91e",
+      "comment": "",
+      "command": "open",
+      "target": "/courtfees",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e25f35c9-21cb-41ae-85a0-78564fc19429",
+      "comment": "",
+      "command": "click",
+      "target": "id=feeCapital",
+      "targets": [
+        ["id=feeCapital", "id"],
+        ["css=#feeCapital", "css"],
+        ["xpath=//input[@id='feeCapital']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9a56fb4-2990-453f-a03a-02056f5deed9",
+      "comment": "",
+      "command": "type",
+      "target": "id=feeCapital",
+      "targets": [
+        ["id=feeCapital", "id"],
+        ["css=#feeCapital", "css"],
+        ["xpath=//input[@id='feeCapital']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "0"
+    }, {
+      "id": "a453d92f-4b66-40a5-88b6-077c7658ed8b",
+      "comment": "",
+      "command": "click",
+      "target": "id=calculate",
+      "targets": [
+        ["id=calculate", "id"],
+        ["css=#calculate", "css"],
+        ["xpath=//button[@id='calculate']", "xpath:attributes"],
+        ["xpath=//div[5]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ba563403-d182-42bd-af4c-67fb685338ee",
+      "comment": "",
+      "command": "click",
+      "target": "id=feeCapital",
+      "targets": [
+        ["id=feeCapital", "id"],
+        ["css=#feeCapital", "css"],
+        ["xpath=//input[@id='feeCapital']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e4ece755-8d24-4d1e-a453-3539194beb80",
+      "comment": "",
+      "command": "click",
+      "target": "id=calculate",
+      "targets": [
+        ["id=calculate", "id"],
+        ["css=#calculate", "css"],
+        ["xpath=//button[@id='calculate']", "xpath:attributes"],
+        ["xpath=//div[5]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b3887fc5-fb59-4c10-a004-694a59cef0c4",
+      "comment": "",
+      "command": "click",
+      "target": "id=feeCapital",
+      "targets": [
+        ["id=feeCapital", "id"],
+        ["css=#feeCapital", "css"],
+        ["xpath=//input[@id='feeCapital']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cd6df14e-6864-466e-a716-a015eeefd3c3",
+      "comment": "",
+      "command": "type",
+      "target": "id=feeCapital",
+      "targets": [
+        ["id=feeCapital", "id"],
+        ["css=#feeCapital", "css"],
+        ["xpath=//input[@id='feeCapital']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "500000"
+    }]
+  }, {
+    "id": "8e545c36-4fcc-40ce-b8b6-f2df5a689575",
+    "name": "บังคับจำนอง",
+    "commands": [{
+      "id": "f34961d5-943b-458d-853b-e0a4fcc338db",
+      "comment": "",
+      "command": "open",
+      "target": "/courtfees",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9bd3dbb7-f72c-48c4-b0ad-9f13ad98886c",
+      "comment": "",
+      "command": "click",
+      "target": "id=feeCapital",
+      "targets": [
+        ["id=feeCapital", "id"],
+        ["css=#feeCapital", "css"],
+        ["xpath=//input[@id='feeCapital']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0beb1f66-61b8-4bd3-bc7b-6526fb27219d",
+      "comment": "",
+      "command": "type",
+      "target": "id=feeCapital",
+      "targets": [
+        ["id=feeCapital", "id"],
+        ["css=#feeCapital", "css"],
+        ["xpath=//input[@id='feeCapital']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "500000"
+    }, {
+      "id": "2afc1d00-aea1-4851-8a59-6f1f9dc822a0",
+      "comment": "",
+      "command": "click",
+      "target": "id=calculate",
+      "targets": [
+        ["id=calculate", "id"],
+        ["css=#calculate", "css"],
+        ["xpath=//button[@id='calculate']", "xpath:attributes"],
+        ["xpath=//div[5]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4aa45ac8-59c2-4d73-81c3-d5ba1ab989d6",
+      "comment": "",
+      "command": "click",
+      "target": "id=feeCapital",
+      "targets": [
+        ["id=feeCapital", "id"],
+        ["css=#feeCapital", "css"],
+        ["xpath=//input[@id='feeCapital']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a5e83923-ca75-438e-8409-41ea0ec874ad",
+      "comment": "",
+      "command": "type",
+      "target": "id=feeCapital",
+      "targets": [
+        ["id=feeCapital", "id"],
+        ["css=#feeCapital", "css"],
+        ["xpath=//input[@id='feeCapital']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "20000000"
+    }, {
+      "id": "4ddd2d86-b66f-472f-9c04-8fb31ab042a9",
+      "comment": "",
+      "command": "click",
+      "target": "id=calculate",
+      "targets": [
+        ["id=calculate", "id"],
+        ["css=#calculate", "css"],
+        ["xpath=//button[@id='calculate']", "xpath:attributes"],
+        ["xpath=//div[5]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "878d8e33-b6c6-4717-89d2-5b5a21135742",
+      "comment": "",
+      "command": "click",
+      "target": "id=feeCapital",
+      "targets": [
+        ["id=feeCapital", "id"],
+        ["css=#feeCapital", "css"],
+        ["xpath=//input[@id='feeCapital']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fa41acf4-35ae-444f-93ab-464f0e6b455e",
+      "comment": "",
+      "command": "type",
+      "target": "id=feeCapital",
+      "targets": [
+        ["id=feeCapital", "id"],
+        ["css=#feeCapital", "css"],
+        ["xpath=//input[@id='feeCapital']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "100000000"
+    }, {
+      "id": "1a834b16-7224-48a8-8257-73d8697df2aa",
+      "comment": "",
+      "command": "click",
+      "target": "id=calculate",
+      "targets": [
+        ["id=calculate", "id"],
+        ["css=#calculate", "css"],
+        ["xpath=//button[@id='calculate']", "xpath:attributes"],
+        ["xpath=//div[5]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "15e62d08-f30e-41f3-9ce0-582b03ccc53e",
+      "comment": "",
+      "command": "click",
+      "target": "id=feeCapital",
+      "targets": [
+        ["id=feeCapital", "id"],
+        ["css=#feeCapital", "css"],
+        ["xpath=//input[@id='feeCapital']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aade054c-1987-4d0a-bf45-e4c8e8d948a1",
+      "comment": "",
+      "command": "type",
+      "target": "id=feeCapital",
+      "targets": [
+        ["id=feeCapital", "id"],
+        ["css=#feeCapital", "css"],
+        ["xpath=//input[@id='feeCapital']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "150000"
+    }, {
+      "id": "4aa4c1c4-0858-4e7f-96ce-1230e89feb52",
+      "comment": "",
+      "command": "click",
+      "target": "id=calculate",
+      "targets": [
+        ["id=calculate", "id"],
+        ["css=#calculate", "css"],
+        ["xpath=//button[@id='calculate']", "xpath:attributes"],
+        ["xpath=//div[5]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4fcc274f-74ac-4aad-98eb-29992d8e4041",
+      "comment": "",
+      "command": "click",
+      "target": "id=feeCapital",
+      "targets": [
+        ["id=feeCapital", "id"],
+        ["css=#feeCapital", "css"],
+        ["xpath=//input[@id='feeCapital']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ffa2da8-a1b1-4a12-8cb3-9321eefc5e74",
+      "comment": "",
+      "command": "type",
+      "target": "id=feeCapital",
+      "targets": [
+        ["id=feeCapital", "id"],
+        ["css=#feeCapital", "css"],
+        ["xpath=//input[@id='feeCapital']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "50000"
+    }, {
+      "id": "8b128705-780f-44ba-9c4f-5ded66765d81",
+      "comment": "",
+      "command": "click",
+      "target": "id=calculate",
+      "targets": [
+        ["id=calculate", "id"],
+        ["css=#calculate", "css"],
+        ["xpath=//button[@id='calculate']", "xpath:attributes"],
+        ["xpath=//div[5]/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "810015d8-46fc-41cc-9f8e-af860decf9e3",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://10.1.23.235/"],
+  "plugins": []
+}
