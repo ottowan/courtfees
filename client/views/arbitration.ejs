@@ -85,11 +85,11 @@
 
 			$("#calculate").click(function () {
 				var feeCapital = $("#feeCapital").val();
-				var sendData = { amountPerson: amountPerson, feeCapital: feeCapital }
-				var endpoint = "https://10.1.23.235:8080/arbitration"
+				//var sendData = { amountPerson: amountPerson, feeCapital: feeCapital }
+				var endpoint = window.location.protocol + "//" + window.location.hostname+"/arbitration/"+ feeCapital+"/amountPerson/"+ amountPerson
 
 				//alert(endpoint)
-				$.post(endpoint, sendData, function (result) {
+				$.get(endpoint, function (result) {
 					$("#result").text(result.feePrice)
 					console.log(result)
 				})

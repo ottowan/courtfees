@@ -6,6 +6,9 @@ var request = require("request");
 
 const config = require("./config");
 
+//ProvincialCourt HaveCapital 
+const rootURL = "https://localhost:8080/"
+
 //var endpoint = "https://localhost:8080";
 var endpoint = "https://localhost:8080";
 var app = express();
@@ -45,8 +48,27 @@ app.get("/arbitration", (req, res) => {
   res.render("arbitration", { active: "arbitration" });
 });
 
-//ProvincialCourt HaveCapital 
-var rootURL = "https://localhost:8080/"
+app.get("/arbitration/:feeCapital/amountPerson/:amountPerson", (req, res) => {
+  request.post(
+    {
+      headers: { "content-type": "application/json" },
+      url: rootURL+"arbitration?feeCapital=" + req.params.feeCapital+"&amountPerson="+ req.params.amountPerson,
+      body: JSON.stringify({
+        feeCapital: req.params.feeCapital
+      }),
+      rejectUnauthorized: false
+    },
+    (error, response, body) => {
+      if (error) {
+        res.json(JSON.parse(error));
+        return console.dir(error);
+      }
+      //console.dir(JSON.parse(body));
+      res.json(JSON.parse(body));
+    }
+  );
+});
+
 app.get("/courtfees/provincialcourt/havecapital/:feeCapital", (req, res) => {
   request.post(
     {
