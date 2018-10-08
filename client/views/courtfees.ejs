@@ -91,7 +91,7 @@
 		$("#calculate").click(function () {
 			var feeCapital = $("#feeCapital").val();
 			var sendData = { feeCapital: feeCapital }
-			var endpoint = "https://10.1.23.235/courtfees/" + $("#court_type option:selected").val() + "/" + $("#fees_type option:selected").val() + "/" + feeCapital
+			var endpoint = "https://61.19.239/courtfees/" + $("#court_type option:selected").val() + "/" + $("#fees_type option:selected").val() + "/" + feeCapital
 
 			console.log(endpoint)
 			$.get(endpoint, function (result) {
