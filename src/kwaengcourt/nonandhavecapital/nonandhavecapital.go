@@ -1,4 +1,16 @@
-package havecapital
+package nonandhavecapital
+
+func CheckFeePriceOver200(feeCapital float64) bool {
+	if feeCapital >= 200 {
+		return true
+	}
+
+	return false
+}
+
+func InitFreePrice200() float64 {
+	return 200.00
+}
 
 func InitFreePrice200k() float64 {
 	return 200000.00
@@ -52,7 +64,7 @@ func InitFreePrice1000() float64 {
 
 func CheckHaveCapital1to300k(feeCapital float64) bool {
 
-	if feeCapital > 1000 && feeCapital <= 300000.00 {
+	if feeCapital >= 1 && feeCapital <= 300000.00 {
 		return true
 	}
 

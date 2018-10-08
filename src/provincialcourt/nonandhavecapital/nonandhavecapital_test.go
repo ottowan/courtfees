@@ -1,6 +1,25 @@
-package havecapital
+package nonandhavecapital
 
 import "testing"
+
+func Test_CheckFeePriceOver200_should_Be_true(t *testing.T) {
+	feePrice := 200.00
+	expectedResult := true
+	actualResult := CheckFeePriceOver200(feePrice)
+
+	if expectedResult != actualResult {
+		t.Errorf("Expected %v but got it %v", expectedResult, actualResult)
+	}
+}
+func Test_InitFreePrice200_Should_Be_200000(t *testing.T) {
+	expectedFreePrice := 200.00
+
+	actualFeePrice := InitFreePrice200()
+
+	if expectedFreePrice != actualFeePrice {
+		t.Errorf("Expected %v but got it %v", expectedFreePrice, actualFeePrice)
+	}
+}
 
 func Test_InitFreePrice200k_Should_Be_200000(t *testing.T) {
 	expectedFreePrice := 200000.00
@@ -113,7 +132,6 @@ func Test_InitFreePrice1000_Should_Be_1000(t *testing.T) {
 	}
 }
 
-
 func Test_CheckHaveCapital1to300k_Input_feeCapital_250000_Should_Be_true(t *testing.T) {
 	expectedResult := true
 	feeCapital := 250000.00
@@ -136,7 +154,7 @@ func Test_CheckFeePriceOver1000_Input_feePrice_1000000_Should_Be_20000(t *testin
 	}
 }
 
-func Test_CalculateTriflesHaveCapital_Input_feeCapital_250000_Should_be_5000(t *testing.T) {
+func Test_CalculateHaveCapital1to300k_Input_feeCapital_250000_Should_be_5000(t *testing.T) {
 	expectedFeePrice := 5000.00
 	feeCapital := 250000.00
 
