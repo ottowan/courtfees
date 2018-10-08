@@ -1,0 +1,75 @@
+{
+  "id": "89714a19-7b3c-48d5-83f5-a703dd7fa36b",
+  "version": "1.1",
+  "name": "Untitled Project",
+  "url": "https://localhost",
+  "tests": [{
+    "id": "4e237a8d-19cd-440a-87ef-433347a71a16",
+    "name": "test_01",
+    "commands": [{
+      "id": "78984f1a-9850-471e-bfd2-b53388a3787f",
+      "comment": "",
+      "command": "open",
+      "target": "/courtfees",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "26d6bf31-d4c6-4ae8-9190-cffbd1d4a977",
+      "comment": "",
+      "command": "click",
+      "target": "id=havecapital",
+      "targets": [
+        ["id=havecapital", "id"],
+        ["name=inlineRadioOptions", "name"],
+        ["css=#havecapital", "css"],
+        ["xpath=//input[@id='havecapital']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4bbb5309-cf8f-4f34-aa6f-a73386d9bf9e",
+      "comment": "",
+      "command": "type",
+      "target": "id=feeCapital",
+      "targets": [
+        ["id=feeCapital", "id"],
+        ["css=#feeCapital", "css"],
+        ["xpath=//input[@id='feeCapital']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "1000000"
+    }, {
+      "id": "b82271b2-29ed-4301-851a-9f7d3e68c240",
+      "comment": "",
+      "command": "click",
+      "target": "id=calculate",
+      "targets": [
+        ["id=calculate", "id"],
+        ["css=#calculate", "css"],
+        ["xpath=//button[@id='calculate']", "xpath:attributes"],
+        ["xpath=//div[5]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1253dead-1a85-40df-898a-f34d8b20268c",
+      "comment": "",
+      "command": "click",
+      "target": "css=div.col-lg-6",
+      "targets": [
+        ["css=div.col-lg-6", "css"],
+        ["xpath=//div/div[2]/div/div/div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "0c38322f-febc-48bf-a290-1545beac4087",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["4e237a8d-19cd-440a-87ef-433347a71a16"]
+  }],
+  "urls": ["https://localhost/"],
+  "plugins": []
+}
