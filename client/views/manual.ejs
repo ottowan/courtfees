@@ -1,131 +1,28 @@
 <!-- Header -->
 <% include ./header %>
 
-	<!-- Menu -->
 
-	<div class="menu d-flex flex-column align-items-center justify-content-center">
-		<div class="menu_content">
-			<div class="cross_1 d-flex flex-column align-items-center justify-content-center"><img src="images/logo.png" alt=""></div>
-			<form action="#" class="menu_search_form">
-				<input type="search" class="menu_search_input" placeholder="Search" required="required">
-				<button class="menu_search_button d-flex flex-column align-items-center justify-content-center">
-					<i class="fa fa-search" aria-hidden="true"></i>
-				</button>
-			</form>
-			<nav class="menu_nav">
-				<ul>
-					<li class="active"><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="sermons.html">Sermons</a></li>
-					<li><a href="events.html">Events</a></li>
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
-		<div class="menu_close"><i class="fa fa-times" aria-hidden="true"></i></div>
-	</div>
-
-
-
-	<!-- Latest Sermon -->
-	<div class="latest" style="padding-top:150px">
-		<div class="container" style="padding-top: 20px; padding-bottom:20px;">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="alert alert-warning alert-dismissible fade show" role="alert">
-						<strong>Holy guacamole!</strong> You should check in on some of those fields below.
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="card ">
-						<div class="card-header text-white bg-primary">
-							<h4>คำนวนค่าป่วยการ</h4>
-						</div>
-						<div class="card-body border-primary">
-							<div class="row">
-								<div class="col-lg-6">
-
-										<div class="form-check form-check-inline" style="padding-left:20px;padding-right:20px;padding-bottom:10px;">
-											<input class="form-check-input" type="radio" name="inlineRadioOptions" id="personOne" value="1" checked>
-											<label class="form-check-label" for="personOne">จำนวนอนุญาโต 1 ท่าน</label>
-										</div>
-										<div class="form-check form-check-inline" style="padding-left:20px;padding-right:20px;padding-bottom:10px;">
-											<input class="form-check-input" type="radio" name="inlineRadioOptions" id="personMoreThanOne" value="3">
-											<label class="form-check-label" for="personMoreThanOne">จำนวนอนุญาโตมากกว่า 1 ท่าน</label>
-										</div>
-										<br>
-										<div class="form-group">
-											<label for="exampleFormControlInput1">จำนวนทุนทรัพย์</label>
-											<input class="form-control" id="feeCapital" placeholder="" value="0">
-										</div>
-										<br>
-										<div class="form-group">
-											<button id="calculate" type="button" class="btn btn-success">คำนวนค่าป่วยการ</button>
-										</div>
-									<br>
-									<p id="result"></p>
-
-								</div>
-
-								<div class="col-lg-6">
-									<p>หมายเหตุ ค่าใช้จ่ายที่เกิดจากการคำนวณนี้ ไม่รวมถึงค่าใช้จ่าย ดังนี้</p>
-
-									<p>1. ค่าใช้จ่ายในการประนอม เช่นค่าพยานหรือผู้เชี่ยวชาญ</p>
-									<p>2. ค่าธรรมเนียมผู้ประนอม</p>
-									<p>3. ค่าใช้จ่ายของคณะอนุญาโตตุลาการ</p>
-									<p>4. ค่าใช้จ่ายในการบริหารคดีของสถาบัน</p>
-									<p>5.ค่าใช้จ่ายของผู้เชี่ยวชาญที่คณะอนุญาโตตุลาการแต่งตั้ง</p>
-									<p>6. ค่าใช้จ่ายอื่นๆ ที่คู่พิพาทตกลงกันให้เป็นค่าใช้จ่ายในการอนุญาโตตุลาการ</p>
-									<p>7. ค่าใช่จ่ายอื่นๆ โดยรวมที่ไม่สามารถระบุราคาเพื่อประกอบการคำนวณนี้ได้ในเบื้องต้น</p>
-
-									<p>*ค่าใช้จ่ายที่ท่านจะได้รับทราบเป็นค่าใช้จ่ายโดยประมาณเท่านั้น ไม่สามารถใช้อ้างอิงในการใช้บริการจริงได้</p>
-									<p>***หากมีการเปลี่ยนแปลง สถาบันอนุญาโตตุลาการขอสงวนสิทธิ์ในการเปลี่ยนแปลงโดยไม่ต้องแจ้งให้ผู้ใช้งานทราบล่วงหน้า</p>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
+<!-- Latest Sermon -->
+<div class="latest" style="padding-top:100px">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div id="output"  style="height:800px !important"></div>
 			</div>
 		</div>
 	</div>
+</div>
+
+
+<script src="./js/pdfobject.min.js"></script>
+
+<script>
+	var filePath = './doc/คู่มือโปรแกรมคำนวณค่าขึ้นศาล.pdf'
+	PDFObject.embed(filePath, "#output");
+</script>
 
 
 
-	<script>
-		$(document).ready(function () {
-			var amountPerson = 1
-			$('#personOne').click(function () {
-				//if ($('#havcapital').is(':checked')) { alert("havcapital checked"); }
-				amountPerson = 1
-			});
 
-			$('#personMoreThanOne').click(function () {
-				//if ($('#noncapital').is(':checked')) { alert("noncapital checked"); }
-				amountPerson = 2
-			});
-
-			$("#calculate").click(function () {
-				var feeCapital = $("#feeCapital").val();
-				var sendData = { amountPerson: amountPerson, feeCapital: feeCapital }
-				var endpoint = "https://10.1.23.235:8080/arbitration"
-
-				//alert(endpoint)
-				$.post(endpoint, sendData, function (result) {
-					$("#result").text(result.feePrice)
-					console.log(result)
-				})
-
-			});
-		});
-	</script>
-
-
-	<!-- Footer -->
-	<% include ./footer %>
+<!-- Footer -->
+<% include ./footer %>

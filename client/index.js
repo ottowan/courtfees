@@ -48,6 +48,12 @@ app.get("/arbitration", (req, res) => {
   res.render("arbitration", { active: "arbitration" });
 });
 
+
+//Main : arbitration
+app.get("/manual", (req, res) => {
+  res.render("manual", { active: "manual" });
+});
+
 app.get("/arbitration/:feeCapital/amountPerson/:amountPerson", (req, res) => {
   request.post(
     {
