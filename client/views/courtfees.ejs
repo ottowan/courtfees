@@ -35,14 +35,20 @@
 									<div class="col-lg-12">
 										<label for="fees_type">ประเภทค่าขึ้นศาล :</label>
 										<select size="7" class="form-control" id="fees_type" name="sellist2">
-											<option value="havecapital" selected>คำฟ้องมีทุนทรัพย์</option>
-											<option value="havecapital_compensation" selected>คำฟ้องมีทุนทรัพย์ และมีการขอให้ชำระค่าเสียหายพร้อมดอกเบี้ย</option>
-											<option value="mortgage">คำฟ้องขอให้บังคับจำนอง</option>
-											<option value="noncapital">คดีไม่มีทุนทรัพย์และคำร้องฝ่ายเดียว</option>
-											<option value="appeal_or_supreme">อุทธรณ์หรือฎีกาคำสั่งตามมาตรา ๒๒๗ หรือ มาตรา ๒๒๘(๒) และ (๓) <br>แห่ง
+											<option value="havecapital" selected data-toggle="tooltip" data-placement="left" title="- คดีที่มีคำขอปลดเปลื้องทุกข์อันอาจคำนวณเป็นราคาเงินได้  เช่น คดีที่มีคำขอเรียกร้องเงินหรือทรัพย์สินซึ่งยังมิได้เป็นของตนจากผู้อื่นมาเป็นของตน  โดยจำนวนเงินหรือราคาทรัพย์ที่เรียกร้องนั้นถือเป็นทุนทรัพย์สำหรับค่าขึ้นศาลในคดีที่มีทุนทรัพย์โจทก์ต้องเสียอัตราร้อยละ 2.50 บาท ของจำนวนทุนทรัพย์ แต่ไม่เกิน 200,000 บาท">
+												คำฟ้องมีทุนทรัพย์
+											</option>
+											<option value="havecapital_compensation" data-toggle="tooltip" data-placement="left" title="-คดีที่มีทุนทรัพย์ + ค่าขึ้นศาลในอนาคต (เกี่ยวกับค่าเช่า ดอกเบี้ย ค่าเสียหาย ) เช่นถ้าไม่ได้ขอดอกเบี้ยก่อนฟ้อง แต่ขอดอกเบี้ยนับแต่วันฟ้องจนถึงวันชำระเสร็จ ต้องเสียค่าขึ้นศาลอนาคตอีก 100 บาท">
+												คำฟ้องมีทุนทรัพย์ และมีการขอให้ชำระค่าเสียหายพร้อมดอกเบี้ย</option>
+											<option value="mortgage" data-toggle="tooltip" data-placement="left" title="- คำฟ้องขอให้บังคับจำนองหรือบังคับเอาทรัพย์สินจำนองหลุด">คำฟ้องขอให้บังคับจำนอง</option>
+											<option value="noncapital" data-toggle="tooltip" data-placement="left" title="- คดีที่โจทก์มีคำขอปลดเปลื้องทุกข์อันไม่อาจคำนวณเป็นราคาเงินได้ เช่น ขอให้บังคับจำเลยให้กระทำการหรือละเว้นกระทำการอย่างใดอย่างหนึ่งเพื่อประโยชน์ของโจทก์  โดยโจทก์ไม่ได้อ้างหรือเรียกร้องเป็นจำนวนเงินหรือทรัพย์สินอย่างใดอย่างหนึ่งสำหรับค่าขึ้นศาลในคดีไม่มีทุนทรัพย์โจทก์ต้องเสียเรื่องละ 200 บาท">
+												คดีไม่มีทุนทรัพย์และคำร้องฝ่ายเดียว</option>
+											<option value="appeal_or_supreme" data-toggle="tooltip" data-placement="left" title="- อุทธรณ์หรือฎีกาคำสั่งตามมาตรา ๒๒๗ หรือ มาตรา ๒๒๘(๒) และ (๓) แห่ง
+											ป.วิ.พ. เสียค่าขึ้นศาลเรื่องละ 200 บาท">
+												อุทธรณ์หรือฎีกาคำสั่งตามมาตรา ๒๒๗ หรือ มาตรา ๒๒๘(๒) และ (๓) แห่ง
 												ป.วิ.พ.</option>
-											<option value="non_and_havecapital">คดีมีทุนทรัพย์ที่มีคำขออื่นด้วย</option>
-											<option value="non_and_havecapital_compensation">คดีมีทุนทรัพย์ที่มีคำขออื่นด้วย
+											<option value="non_and_havecapital" data-toggle="tooltip" data-placement="left" title="- นคดีมีทุนทรัพย์กับไม่มีทุนทรัพย์รวมอยู่ในคดีเดียวกันให้คิดค่าขึ้นศาลในอัตราร้อยละ 2.50 บาท ของจำนวนทุนทรัพย์ที่เรียกร้องโดยเป็นเงินอย่างต่ำ  200 บาท แต่ไม่เกิน 200,000 บาท">คดีมีทุนทรัพย์ที่มีคำขออื่นด้วย</option>
+											<option value="non_and_havecapital_compensation" data-toggle="tooltip" data-placement="left" title="-คดีมีทุนทรัพย์ที่มีคำขออื่นด้วย + ค่าขึ้นศาลในอนาคต (เกี่ยวกับค่าเช่า ดอกเบี้ย ค่าเสียหาย ) เช่นถ้าไม่ได้ขอดอกเบี้ยก่อนฟ้อง แต่ขอดอกเบี้ยนับแต่วันฟ้องจนถึงวันชำระเสร็จ ต้องเสียค่าขึ้นศาลอนาคตอีก 100 บาท">คดีมีทุนทรัพย์ที่มีคำขออื่นด้วย
 												และมีการขอให้ชำระค่าเสียหายพร้อมดอกเบี้ย</option>
 										</select>
 									</div>
@@ -50,7 +56,10 @@
 								<div class="row">
 									<div class="col-lg-12">
 										<div class="form-group">
-											<label for="exampleFormControlInput1">จำนวนทุนทรัพย์ : </label>
+											<label for="exampleFormControlInput1">
+												จำนวนทุนทรัพย์ : <a href="#" data-toggle="tooltip" data-placement="right" title="จำนวนเงิน หรือราคาทรัพย์ที่เรียกร้องในคดี รวมทั้งจำนวนดอกเบี้ยที่เกิดขึ้น หรือสิ่งที่สามารถคำนวณเป็นราคาได้ เช่น ที่ดิน ค่าเช่า รถยนต์"><img
+													 src="./images/qa.png"></a>
+											</label>
 											<input class="form-control" id="feeCapital" placeholder="" value="0">
 										</div>
 									</div>
@@ -152,7 +161,7 @@
 <script src="./js/space_line.js"></script>
 <script>
 	$(document).ready(function () {
-
+		$('[data-toggle="tooltip"]').tooltip();
 		//Disable input  data
 		$("#fees_type").change(function () {
 			if ($(this).val() == "noncapital" || $(this).val() == "appeal_or_supreme" || $(this).val() == "compensation") {
@@ -169,6 +178,21 @@
 			var courtType = $("#court_type option:selected").val()
 			var feeCapital = $("#feeCapital").val();
 			var feeType = $("#fees_type option:selected").val()
+
+			// //Check integer
+			// if(!isInt(feeCapital)){
+			// 	$("#result2").html("กรุณากรอกทุนทรัพย์เป็นตัวเลข")
+			// 	//alert("กรุณากรอกทุนทรัพย์เป็นตัวเลข")
+			// 	return
+			// }
+
+			// //Check feeCapital more than 0
+			// if (feeType == "havecapital" || feeType == "mortgage" || feeType == "non_and_havecapital") {
+			// 	if (feeCapital.lenght == 0){
+			// 		alert("กรุณากรอกทุนทรัพย์")
+			// 		return
+			// 	}
+			// }
 
 			if (courtType == "kwaengcourt" && feeCapital > 300000) {
 				alert("คดีทุนทรัพย์มากกว่า 300,000 บาท ไม่สามารถฟ้องในศาลแขวงได้\nกรุณาเลือกประเภทศาล : คดีศาลจังหวัด")
@@ -199,6 +223,11 @@
 
 	});
 
+
+	function isInt(value) {
+		var er = /^-?[0-9]+$/;
+		return er.test(value);
+	}
 
 	function callAPI(courtType, feeType, feeCapital, feeOption) {
 
