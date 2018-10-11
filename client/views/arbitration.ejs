@@ -44,38 +44,47 @@
 										</div>
 										<br>
 										<div class="form-group">
-											<button id="calculate" type="button" class="btn btn-success">คำนวนค่าป่วยการ</button>
+											<button id="calculate" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">คำนวนค่าป่วยการ</button>
 										</div>
 									</div>
 								</div>
-								<br>
-								<div class="row">
-									<div class="col-lg-12">
-										<h4>ผลการคำนวณค่าป่วยการอนุญาโตตุลาการ</h4>
-									</div>
-								</div>
-								<hr>
-								<div class="row">
-									<div class="col-lg-4">
-										ผู้เรียกร้องวางเงิน :
-									</div>
-									<div class="col-lg-8">
-										<p id="result1"> - บาท</p>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-lg-4">
-										ผู้คัดค้านวางเงิน :
-									</div>
-									<div class="col-lg-8">
-										<p id="result2"> - บาท</p>
-									</div>
-								</div>
 
+								<div class="row">
+
+									<!-- The Modal -->
+									<div class="modal fade" id="myModal">
+										<div class="modal-dialog">
+											<div class="modal-content">
+
+												<!-- Modal Header -->
+												<div class="modal-header">
+													<h4 class="modal-title">ผลการคำนวณค่าป่วยการอนุญาโตตุลาการ</h4>
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+												</div>
+
+												<!-- Modal body -->
+												<div class="modal-body" style="font-size:20px">
+													<div class="row">
+														<div class="col-5">ผู้เรียกร้องวางเงิน : </div>
+														<div class="col-7"><span id="result1" style="color:blue"></span> บาท</div>
+														<div class="col-5">ผู้คัดค้านวางเงิน : </div>
+														<div class="col-7"><span id="result2" style="color:blue"></span> บาท</div>
+													</div>
+												</div>
+
+												<!-- Modal footer -->
+												<div class="modal-footer">
+													<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 
 							<div class="col-lg-6">
-								<img src="./images/fees/tai3.png" style="height: 100%; width: 100%; object-fit: contain;">
+								<img id="zoom_13" src="./images/fees/tai3.png" style='height: 100%; width: 100%; object-fit: contain;'>
 							</div>
 						</div>
 
@@ -87,7 +96,7 @@
 </div>
 
 
-
+<script src='./js/jquery.elevateZoom-3.0.8.min.js'></script>
 <script>
 	$(document).ready(function () {
 		var amountPerson = 1
@@ -109,15 +118,25 @@
 			//alert(endpoint)
 			$.get(endpoint, function (result) {
 
-				var feePriceResult =  (parseInt(result.feePrice)/2)
-				var feePrice1 = feePriceResult.toLocaleString() + ".00 บาท"
+				var feePriceResult = (parseInt(result.feePrice) / 2)
+				var feePrice1 = feePriceResult.toLocaleString() + ".00"
 				$("#result1").text(feePrice1)
 				$("#result2").text(feePrice1)
-				console.log(result)
 			})
 
 		});
 	});
+
+	$("#zoom_05").elevateZoom({
+		zoomType: "inner",
+		cursor: "crosshair"
+	});
+
+	$("#zoom_13").elevateZoom({
+		zoomWindowPosition: 11,
+		zoomWindowWidth: 500,
+		zoomWindowHeight: 150
+	}); 
 </script>
 
 
