@@ -1,4 +1,5 @@
 var express = require("express");
+var http = require("http");
 var https = require("https");
 var fs = require("fs");
 var bodyParser = require("body-parser");
@@ -34,8 +35,27 @@ var options = {
 
 //Main : index
 app.get("/", (req, res) => {
-  res.render("index", { active: "index" });
+  // if(req.headers["x-forwarded-proto"] === "https")
+  //   res.render("index", { active: "index" });
+  // else
+  //   res.redirect("https://" + req.headers.host + req.url);
+    // console.log(req)
+    // res.render("index", { active: "index" });
+
+    if(req.secure){
+      // OK, continue
+      res.render("index", { active: "index" });
+    }else{
+      // handle port numbers if you need non defaults
+      // res.redirect('https://' + req.host + req.url); // express 3.x
+      res.redirect('https://' + req.hostname + req.url); // express 4.x
+
+    }
+
 });
+
+
+
 
 //Main : courtfees
 app.get("/courtfees", (req, res) => {
@@ -382,3 +402,6 @@ app.get("/courtfees/kwaengcourt/compensation/:feeCapital", (req, res) => {
 
 https.createServer(options, app).listen(443);
 console.log("Start server on port : 443");
+
+http.createServer(app).listen(80);
+console.log("Start server on port : 80");
