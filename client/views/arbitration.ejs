@@ -118,7 +118,7 @@
 			//alert(endpoint)
 			$.get(endpoint, function (result) {
 
-				var feePriceResult = (parseInt(result.feePrice) / 2)
+				var feePriceResult = Math.floor((parseInt(result.feePrice) / 2))
 				var feePrice1 = feePriceResult.toLocaleString() + ".00"
 				$("#result1").text(feePrice1)
 				$("#result2").text(feePrice1)
