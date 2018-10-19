@@ -52,7 +52,7 @@
 								<div class="row">
 
 									<!-- The Modal -->
-									<div class="modal fade" id="myModal">
+									<div class="modal" id="myModal">
 										<div class="modal-dialog">
 											<div class="modal-content">
 
@@ -110,8 +110,51 @@
 			amountPerson = 2
 		});
 
-		$("#calculate").click(function () {
-			var feeCapital = $("#feeCapital").val();
+
+
+		$("#feeCapital").keyup(function (e) {
+			if ($("#feeCapital").val()) {
+				var number = parseInt($("#feeCapital").val().replace(/[^0-9\.]+/g, "")).toLocaleString()
+
+
+				var result = false;
+				try {
+					var charCode = (e.which) ? e.which : e.keyCode;
+					if ((charCode >= 48 && charCode <= 57) || (charCode >= 96 && charCode <= 105)) {
+						$("#feeCapital").val(number)
+					} else if (charCode == 46 || charCode == 8) {
+						return
+					} else {
+						alert("กรุณากรอก ทุนทรัพย์ เป็นตัวเลข")
+						return
+					}
+				}
+				catch (err) {
+
+				}
+
+			} else {
+				$("#feeCapital").val("")
+			}
+		});
+
+
+		$("#calculate").click(function (e) {
+
+
+			e.preventDefault(); //stop submit
+			var feeCapital = parseInt($("#feeCapital").val().replace(/[^0-9\.]+/g, ""));
+			//Validate number
+			if (!isInt(feeCapital)) {
+				alert("กรุณากรอก -ทุนทรัพย์- เป็นตัวเลข")
+				$("#feeCapital").focus()
+				$("#feeCapital").select()
+				$("#feeCapital").css("border-color", "red")
+				$('#myModal').modal().hide();
+				return
+			}
+
+
 			//var sendData = { amountPerson: amountPerson, feeCapital: feeCapital }
 			var endpoint = window.location.protocol + "//" + window.location.hostname + "/arbitration/" + feeCapital + "/amountPerson/" + amountPerson
 
@@ -126,6 +169,16 @@
 
 		});
 	});
+
+
+
+	function isInt(value) {
+
+		var er = /^-?[0-9]+$/;
+		return er.test(value);
+	}
+
+
 
 	$("#zoom_05").elevateZoom({
 		zoomType: "inner",
