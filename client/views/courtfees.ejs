@@ -82,7 +82,7 @@
 								<div class="row">
 
 									<!-- The Modal -->
-									<div class="modal fade" id="myModal">
+									<div class="modal" id="myModal">
 										<div class="modal-dialog">
 											<div class="modal-content">
 
@@ -94,7 +94,7 @@
 
 												<!-- Modal body -->
 												<div class="modal-body" style="font-size:20px">
-													<div class="row">
+													<div class="row" id="content_fees">
 														<div class="col-5">ค่าขึ้นศาล :</div>
 														<div class="col-7"><span id="result1"></span> บาท</div>
 														<div class="col-5">ค่าขึ้นศาลอนาคต : </div>
@@ -161,6 +161,35 @@
 <script src="./js/space_line.js"></script>
 <script>
 	$(document).ready(function () {
+
+
+		$("#feeCapital").keyup(function (e) {
+			if ($("#feeCapital").val()) {
+				var number = parseInt($("#feeCapital").val().replace(/[^0-9\.]+/g, "")).toLocaleString()
+
+
+				var result = false;
+				try {
+					var charCode = (e.which) ? e.which : e.keyCode;
+					if ((charCode >= 48 && charCode <= 57) || (charCode >= 96 && charCode <= 105)) {
+						$("#feeCapital").val(number)
+					}else if(charCode == 46 || charCode == 8 ){
+						return
+					}else{
+						alert("กรุณากรอก ทุนทรัพย์ เป็นตัวเลข")
+						return
+					}
+				}
+				catch (err) {
+						
+				}
+
+			} else {
+				$("#feeCapital").val("")
+			}
+		});
+
+
 		$('[data-toggle="tooltip"]').tooltip();
 		//Disable input  data
 		$("#fees_type").change(function () {
@@ -173,26 +202,25 @@
 		});
 
 
-		$("#calculate").click(function () {
+		$('#calculate').click(function (e) {
 
+			e.preventDefault(); //stop submit
 			var courtType = $("#court_type option:selected").val()
-			var feeCapital = $("#feeCapital").val();
+			var feeCapital = parseInt($("#feeCapital").val().replace(/[^0-9\.]+/g, ""));
 			var feeType = $("#fees_type option:selected").val()
 
-			// //Check integer
-			// if(!isInt(feeCapital)){
-			// 	$("#result2").html("กรุณากรอกทุนทรัพย์เป็นตัวเลข")
-			// 	//alert("กรุณากรอกทุนทรัพย์เป็นตัวเลข")
-			// 	return
-			// }
+			//alert(feeCapital)
 
-			// //Check feeCapital more than 0
-			// if (feeType == "havecapital" || feeType == "mortgage" || feeType == "non_and_havecapital") {
-			// 	if (feeCapital.lenght == 0){
-			// 		alert("กรุณากรอกทุนทรัพย์")
-			// 		return
-			// 	}
-			// }
+			//Validate number
+			if (!isInt(feeCapital)) {
+				alert("กรุณากรอก -ทุนทรัพย์- เป็นตัวเลข")
+				$("#feeCapital").focus()
+				$("#feeCapital").select()
+				$("#feeCapital").css("border-color", "red")
+				$('#myModal').modal().hide();
+				return
+			}
+
 
 			if (courtType == "kwaengcourt" && feeCapital > 300000) {
 				alert("คดีทุนทรัพย์มากกว่า 300,000 บาท ไม่สามารถฟ้องในศาลแขวงได้\nกรุณาเลือกประเภทศาล : คดีศาลจังหวัด")
@@ -200,11 +228,15 @@
 				$("#feeCapital").select()
 				$("#feeCapital").css("border-color", "red")
 				$("#court_type").css("border-color", "red")
+				$('#myModal').modal().hide();
 				return
 			} else {
 				$("#feeCapital").css("border-color", "#ced4da")
 				$("#court_type").css("border-color", "#ced4da")
 			}
+
+
+
 			//alert(feeType)
 			if (feeType == "havecapital_compensation") {
 				callAPI(courtType, "havecapital", feeCapital, 100.00)
@@ -218,6 +250,52 @@
 				$("#result2").html("0.00")
 			}
 
+
+
+		});
+
+
+
+		$("#calculate").click(function () {
+
+			// var courtType = $("#court_type option:selected").val()
+			// var feeCapital = $("#feeCapital").val();
+			// var feeType = $("#fees_type option:selected").val()
+
+			// //Check integer
+			// if (!isInt(feeCapital)) {
+			// 	//$("#content_fees").html("กรุณากรอกทุนทรัพย์เป็นตัวเลข")
+			// 	alert("กรุณากรอกทุนทรัพย์เป็นตัวเลข")
+			// 	$("#myModal").modal().hide();
+			// 	return
+			// } else {
+
+			// 	if (courtType == "kwaengcourt" && feeCapital > 300000) {
+			// 		alert("คดีทุนทรัพย์มากกว่า 300,000 บาท ไม่สามารถฟ้องในศาลแขวงได้\nกรุณาเลือกประเภทศาล : คดีศาลจังหวัด")
+			// 		$("#feeCapital").focus()
+			// 		$("#feeCapital").select()
+			// 		$("#feeCapital").css("border-color", "red")
+			// 		$("#court_type").css("border-color", "red")
+			// 		return
+			// 	} else {
+			// 		$("#feeCapital").css("border-color", "#ced4da")
+			// 		$("#court_type").css("border-color", "#ced4da")
+			// 	}
+			// 	//alert(feeType)
+			// 	if (feeType == "havecapital_compensation") {
+			// 		callAPI(courtType, "havecapital", feeCapital, 100.00)
+			// 		$("#result2").html("100.00")
+
+			// 	} else if (feeType == "non_and_havecapital_compensation") {
+			// 		callAPI(courtType, "non_and_havecapital", feeCapital, 100.00)
+			// 		$("#result2").html("100.00")
+			// 	} else {
+			// 		callAPI(courtType, feeType, feeCapital, 0.00)
+			// 		$("#result2").html("0.00")
+			// 	}
+			// }
+
+
 		});
 
 
@@ -225,6 +303,7 @@
 
 
 	function isInt(value) {
+
 		var er = /^-?[0-9]+$/;
 		return er.test(value);
 	}
@@ -245,6 +324,18 @@
 		});
 
 	}
+
+
+	function validateForm() {
+
+		var z = document.forms["myForm"]["num"].value;
+
+		if (!/^[0-9]+$/.test(z)) {
+			alert("Please only enter numeric characters only for your Age! (Allowed input:0-9)")
+		}
+
+	}
+
 </script>
 
 
