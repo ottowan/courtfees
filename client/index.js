@@ -45,11 +45,14 @@ var accessLogStream = rfs('access.log', {
   interval: '1d', // rotate daily
   path: path.join(__dirname, 'log')
 })
-
 // setup the logger
-app.use(morgan('combined', { stream: accessLogStream }))
-
-
+//app.use(morgan('combined', { stream: accessLogStream }))
+morgan.token('date', (req, res, tz) => {
+  var p = new Date().toString().replace(/[A-Z]{3}\+/,'+').split(/ /);
+    return( p[2]+'/'+p[1]+'/'+p[3]+':'+p[4]+' '+p[5] );
+})
+morgan.format('myformat',':remote-addr - :remote-user [:date] ":method :url HTTP/:http-version" :status :response-time ms :res[content-length] ":referrer" ')
+app.use(morgan('myformat', { stream: accessLogStream }))
 //Main : index
 app.get("/", (req, res) => {
   // if(req.headers["x-forwarded-proto"] === "https")
