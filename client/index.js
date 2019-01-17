@@ -4,6 +4,7 @@ var https = require("https");
 var fs = require("fs");
 var bodyParser = require("body-parser");
 var request = require("request");
+var favicon = require("serve-favicon")
 
 const config = require("./config");
 
@@ -17,7 +18,7 @@ app.set("views", "./views");
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+app.use(favicon(__dirname + "/views/favicon.ico"));
 app.use(express.static(__dirname + "/views"));
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
