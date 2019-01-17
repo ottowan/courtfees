@@ -5,6 +5,11 @@ var fs = require("fs");
 var bodyParser = require("body-parser");
 var request = require("request");
 var favicon = require("serve-favicon")
+var path = require("path")
+
+//log
+var morgan = require('morgan')
+var rfs = require('rotating-file-stream')
 
 const config = require("./config");
 
@@ -33,6 +38,17 @@ var options = {
   pfx: fs.readFileSync("./cert/Cert.pfx"),
   passphrase: config.certPassword()
 };
+
+
+// create a rotating write stream
+var accessLogStream = rfs('access.log', {
+  interval: '1d', // rotate daily
+  path: path.join(__dirname, 'log')
+})
+
+// setup the logger
+app.use(morgan('combined', { stream: accessLogStream }))
+
 
 //Main : index
 app.get("/", (req, res) => {

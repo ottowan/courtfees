@@ -1,4 +1,5 @@
 pkg
+/client/log
 /client/cert
 /client/config.js
 /client/node_modules
