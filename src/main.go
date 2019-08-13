@@ -40,6 +40,7 @@ func main() {
 	http.HandleFunc("/arbitration", arbitration)
 
 	http.HandleFunc("/provincialcourt/havecapital", ProvincialCourtHaveCapital)
+	http.HandleFunc("/provincialcourt/havecapitalfuture", ProvincialCourtHaveCapitalFuture)
 	http.HandleFunc("/provincialcourt/noncapital", ProvincialCourtNonCapital)
 	http.HandleFunc("/provincialcourt/mortgage", ProvincialCourtMortgage)
 	http.HandleFunc("/provincialcourt/appealorsupreme", ProvincialCourtAppealOrSupreme)
@@ -47,6 +48,7 @@ func main() {
 	http.HandleFunc("/provincialcourt/nonandhavecapital", ProvincialCourtNonAndHaveCapital)
 
 	http.HandleFunc("/kwaengcourt/havecapital", KwaengCourtHaveCapital)
+	http.HandleFunc("/kwaengcourt/havecapitalfuture", KwaengCourtHaveCapitalFuture)
 	http.HandleFunc("/kwaengcourt/noncapital", KwaengCourtNonCapital)
 	http.HandleFunc("/kwaengcourt/mortgage", KwaengCourtMortgage)
 	http.HandleFunc("/kwaengcourt/appealorsupreme", KwaengCourtAppealOrSupreme)
@@ -112,6 +114,35 @@ func ProvincialCourtHaveCapital(w http.ResponseWriter, r *http.Request) {
 	feeCapitalFloat, err := strconv.ParseFloat(feeCapital, 64)
 	result := pvHaveCapital.CalculateHaveCapital(feeCapitalFloat)
 	todos := Fee{FeePrice: result}
+
+	if err := json.NewEncoder(w).Encode(todos); err != nil {
+		panic(err)
+	}
+}
+
+
+type FeeFuture struct {
+	FeeType  string  `json:"feeType"`
+	FeePrice float64 `json:"feePrice"`
+	FeePriceFuture int `json:"feePriceFuture"`
+}
+func ProvincialCourtHaveCapitalFuture(w http.ResponseWriter, r *http.Request) {
+
+	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type,access-control-allow-origin, access-control-allow-headers")
+	w.WriteHeader(http.StatusOK)
+
+	err := r.ParseForm()
+	if err != nil {
+		panic(err)
+	}
+
+	feeCapital := r.Form.Get("feeCapital")
+
+	feeCapitalFloat, err := strconv.ParseFloat(feeCapital, 64)
+	result := pvHaveCapital.CalculateHaveCapitalFuture(feeCapitalFloat)
+	todos := FeeFuture{FeePrice: result, FeePriceFuture: 100}
 
 	if err := json.NewEncoder(w).Encode(todos); err != nil {
 		panic(err)
@@ -250,6 +281,31 @@ func KwaengCourtHaveCapital(w http.ResponseWriter, r *http.Request) {
 	feeCapitalFloat, err := strconv.ParseFloat(feeCapital, 64)
 	result := kwHaveCapital.CalculateHaveCapital(feeCapitalFloat)
 	todos := Fee{FeePrice: result}
+
+	if err := json.NewEncoder(w).Encode(todos); err != nil {
+		panic(err)
+	}
+}
+
+func KwaengCourtHaveCapitalFuture(w http.ResponseWriter, r *http.Request) {
+
+	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type,access-control-allow-origin, access-control-allow-headers")
+	w.WriteHeader(http.StatusOK)
+
+	err := r.ParseForm()
+	if err != nil {
+		panic(err)
+	}
+
+	feeCapital := r.Form.Get("feeCapital")
+
+	//fmt.Printf("%s", feeCapital)
+
+	feeCapitalFloat, err := strconv.ParseFloat(feeCapital, 64)
+	result := kwHaveCapital.CalculateHaveCapital(feeCapitalFloat)
+	todos := FeeFuture{FeePrice: result, FeePriceFuture: 100}
 
 	if err := json.NewEncoder(w).Encode(todos); err != nil {
 		panic(err)

@@ -95,10 +95,11 @@ app.get("/manual", (req, res) => {
 });
 
 app.get("/arbitration/:feeCapital/amountPerson/:amountPerson", (req, res) => {
+  var URI = rootURL+"arbitration?feeCapital=" + req.params.feeCapital+"&amountPerson="+ req.params.amountPerson
   request.post(
     {
       headers: { "content-type": "application/json" },
-      url: rootURL+"arbitration?feeCapital=" + req.params.feeCapital+"&amountPerson="+ req.params.amountPerson,
+      url: URI,
       body: JSON.stringify({
         feeCapital: req.params.feeCapital
       }),
@@ -116,10 +117,37 @@ app.get("/arbitration/:feeCapital/amountPerson/:amountPerson", (req, res) => {
 });
 
 app.get("/courtfees/provincialcourt/havecapital/:feeCapital", (req, res) => {
+  
+  var URI = rootURL+"provincialcourt/havecapital?feeCapital=" + req.params.feeCapital
+  console.log(URI)
   request.post(
     {
       headers: { "content-type": "application/json" },
-      url: rootURL+"provincialcourt/havecapital?feeCapital=" + req.params.feeCapital,
+      url: URI,
+      body: JSON.stringify({
+        feeCapital: req.params.feeCapital
+      }),
+      rejectUnauthorized: false
+    },
+    (error, response, body) => {
+      if (error) {
+        res.json(JSON.parse(error));
+        return console.dir(error);
+      }
+      //console.dir(JSON.parse(body));
+      res.json(JSON.parse(body));
+    }
+  );
+});
+
+app.get("/courtfees/provincialcourt/havecapitalfuture/:feeCapital", (req, res) => {
+  
+  var URI = rootURL+"provincialcourt/havecapitalfuture?feeCapital=" + req.params.feeCapital
+  console.log(URI)
+  request.post(
+    {
+      headers: { "content-type": "application/json" },
+      url: URI,
       body: JSON.stringify({
         feeCapital: req.params.feeCapital
       }),
@@ -138,7 +166,6 @@ app.get("/courtfees/provincialcourt/havecapital/:feeCapital", (req, res) => {
 
 //ProvincialCourt NonCapital 
 app.get("/courtfees/provincialcourt/noncapital/:feeCapital", (req, res) => {
-
   var URI = rootURL+"provincialcourt/noncapital?feeCapital=" + req.params.feeCapital
   console.log(URI)
   request.post(
@@ -268,10 +295,37 @@ app.get("/courtfees/provincialcourt/compensation/:feeCapital", (req, res) => {
 });
 
 app.get("/courtfees/kwaengcourt/havecapital/:feeCapital", (req, res) => {
+
+  var URI = rootURL+"kwaengcourt/havecapital?feeCapital=" + req.params.feeCapital
+  console.log(URI)
   request.post(
     {
       headers: { "content-type": "application/json" },
-      url: rootURL+"kwaengcourt/havecapital?feeCapital=" + req.params.feeCapital,
+      url: URI,
+      body: JSON.stringify({
+        feeCapital: req.params.feeCapital
+      }),
+      rejectUnauthorized: false
+    },
+    (error, response, body) => {
+      if (error) {
+        res.json(JSON.parse(error));
+        return console.dir(error);
+      }
+      //console.dir(JSON.parse(body));
+      res.json(JSON.parse(body));
+    }
+  );
+});
+
+app.get("/courtfees/kwaengcourt/havecapitalfuture/:feeCapital", (req, res) => {
+
+  var URI = rootURL+"kwaengcourt/havecapitalfuture?feeCapital=" + req.params.feeCapital
+  console.log(URI)
+  request.post(
+    {
+      headers: { "content-type": "application/json" },
+      url: URI,
       body: JSON.stringify({
         feeCapital: req.params.feeCapital
       }),
