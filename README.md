@@ -62,6 +62,11 @@ HOUR, MINUTE
 * ให้เขียนรายละเอียดด้วยว่าแก้ไขอะไรและทำที่ตรงไหน
 
 ## คำสั่ง Run Test
+
+go test
+
+go test -cover
+
 ### ค่าสั่ง Run Acceptance Test (Robot)
 
 ```
