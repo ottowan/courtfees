@@ -239,12 +239,12 @@
 
 			//alert(feeType)
 			if (feeType == "havecapital_compensation") {
-				callAPI(courtType, "havecapital", feeCapital, 100.00)
-				$("#result2").html("100.00")
+				callInterestAPI(courtType, "havecapital", feeCapital, 100.00)
+				// $("#result2").html("100.00")
 
 			} else if (feeType == "non_and_havecapital_compensation") {
-				callAPI(courtType, "non_and_havecapital", feeCapital, 100.00)
-				$("#result2").html("100.00")
+				callInterestAPI(courtType, "non_and_havecapital", feeCapital, 100.00)
+				// $("#result2").html("100.00")
 			} else {
 				callAPI(courtType, feeType, feeCapital, 0.00)
 				$("#result2").html("0.00")
@@ -266,6 +266,32 @@
 		return er.test(value);
 	}
 
+	function callInterestAPI(courtType, feeType, feeCapital, feeOption) {
+
+		var endpoint = window.location.protocol + "//" + window.location.hostname + "/courtfees/" + courtType + "/" + feeType + "/" + feeCapital
+
+		//console.log(endpoint)
+		$.get(endpoint, function (result) {
+
+			//Render space & result data
+			var feePrice = result.feePrice.toLocaleString() + ".00"
+			var total = (result.feePrice + feeOption).toLocaleString() + ".00"
+
+			if(result.feePrice >= 1000){
+
+				$("#result1").html(feePrice)
+				$("#result2").html("ไม่คิดค่าธรรมเนียม")
+				$("#total").html("1,000.00")
+			}else{
+
+				$("#result1").html(feePrice)
+				$("#result1").html("100.00")
+				$("#total").html(total)
+			}
+			//alert(lengthFeePrice)
+		});
+
+	}
 	function callAPI(courtType, feeType, feeCapital, feeOption) {
 
 		var endpoint = window.location.protocol + "//" + window.location.hostname + "/courtfees/" + courtType + "/" + feeType + "/" + feeCapital
