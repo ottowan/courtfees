@@ -35,7 +35,8 @@ app.use(function(req, res, next) {
 });
 
 var options = {
-  pfx: fs.readFileSync("./cert/Cert.pfx"),
+  pfx: fs.readFileSync("./cert/server.pfx"),
+  //cert: fs.readFileSync('./cert/server.crt')
   passphrase: config.certPassword()
 };
 
