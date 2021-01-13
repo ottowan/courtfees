@@ -56,7 +56,7 @@ func main() {
 	http.HandleFunc("/kwaengcourt/nonandhavecapital", KwaengCourtNonAndHaveCapital)
 
 	fmt.Printf("GOLANG server @port 8080")
-	err := http.ListenAndServeTLS(":8080", "./cert/server.crt", "./cert/server-decrypted.key", nil)
+	err := http.ListenAndServeTLS(":8080", "./cert/server.crt", "./cert/server.key", nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}

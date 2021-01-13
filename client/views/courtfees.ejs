@@ -239,7 +239,7 @@
 
 			//alert(feeType)
 			if (feeType == "havecapital_compensation") {
-				callInterestAPI(courtType, "havecapital", feeCapital, 100.00)
+				callInterestAPI(courtType, "havecapitalfuture", feeCapital, 100.00)
 				// $("#result2").html("100.00")
 
 			} else if (feeType == "non_and_havecapital_compensation") {
@@ -277,18 +277,24 @@
 			var feePrice = result.feePrice.toLocaleString() + ".00"
 			var total = (result.feePrice + feeOption).toLocaleString() + ".00"
 
-			if(result.feePrice >= 1000){
+			//Check ค่าขึ้นศาล feePrice > 1000 ไม่คิดค่าขึ้นศาลอนาคต
+			//(ถ้าค่าขึ้นศาล มากกว่า 1000 บาท จะคิดค่าขึ้นศาลอนาคต 1000 บาท)
+			// if(result.feePrice >= 1000){
+			// 	total =  (result.feePrice + 1000).toLocaleString() + ".00"
+			// 	$("#result1").html(feePrice)
+			// 	$("#result2").html("ไม่คิดค่าธรรมเนียม")
+			// 	$("#total").html(total)
+			// }else{
 
-				$("#result1").html(feePrice)
-				$("#result2").html("ไม่คิดค่าธรรมเนียม")
-				$("#total").html("1,000.00")
-			}else{
+			// 	$("#result1").html(feePrice)
+			// 	$("#result2").html("100.00")
+			// 	$("#total").html(total)
+			// }
+			//alert(lengthFeePrice)
 
-				$("#result1").html(feePrice)
+						$("#result1").html(feePrice)
 				$("#result2").html("100.00")
 				$("#total").html(total)
-			}
-			//alert(lengthFeePrice)
 		});
 
 	}
